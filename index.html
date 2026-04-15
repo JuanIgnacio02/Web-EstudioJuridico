@@ -3,484 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gimena Pérez, abogada en Buenos Aires. Especialista en accidentes laborales, divorcios, sucesiones y contratos. Primera consulta sin costo. Escribime por WhatsApp." />
-  <meta name="keywords" content="abogada, Gimena Pérez, accidentes laborales, ART, divorcio express, sucesiones, contratos, Buenos Aires, asesoramiento legal" />
-  <meta name="author" content="Abogada Gimena Pérez" />
-  <meta property="og:title" content="Abogada Gimena Pérez — Tu caso tiene solución" />
-  <meta property="og:description" content="Accidentes, divorcios, sucesiones y contratos. Primera consulta sin costo. Atención directa y personalizada." />
+  <meta name="description" content="Abogada Gimena Pérez — Estudio Jurídico en Buenos Aires. Accidentes, divorcios, sucesiones y contratos. Primera consulta sin costo." />
+  <meta property="og:title" content="Estudio Jurídico · Abogada Gimena Pérez" />
+  <meta property="og:description" content="Soluciones legales claras y personalizadas. Accidentes, divorcios, sucesiones y contratos." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0a0a0a" />
-  <title>Abogada Gimena Pérez | Estudio Jurídico</title>
+  <meta name="theme-color" content="#090909" />
+  <title>Estudio Jurídico · Gimena Pérez</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
+  <!-- NAVBAR -->
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
-      <a href="#hero" class="navbar__logo">
-        <span class="logo-symbol">⚖</span>
-        <span class="logo-text">Gimena <strong>Pérez</strong> <span class="logo-sub">· Abogada</span></span>
+      <a href="index.html" class="navbar__logo">
+        <img src="logo.png" alt="Estudio Jurídico Pérez" class="navbar__logo-img" />
+        <div class="navbar__logo-text">
+          <span class="navbar__logo-name">Gimena Pérez</span>
+          <span class="navbar__logo-role">Abogada</span>
+        </div>
       </a>
       <nav class="navbar__links" id="navLinks">
-        <a href="#accidentes">Accidentes</a>
-        <a href="#divorcios">Divorcios</a>
-        <a href="#sucesiones">Sucesiones</a>
-        <a href="#contratos">Contratos</a>
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20legal."
-          class="nav-cta"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Escribime</a>
+        <a href="accidentes.html">Accidentes</a>
+        <a href="divorcios.html">Divorcios</a>
+        <a href="sucesiones.html">Sucesiones</a>
+        <a href="contratos.html">Contratos</a>
+        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quisiera%20hacer%20una%20consulta." class="nav-cta" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+          Consulta gratis
+        </a>
       </nav>
-      <button class="navbar__burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+      <button class="navbar__burger" id="burger" aria-label="Menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="hero">
+  <!-- HERO -->
+  <section class="hero">
     <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container hero__grid">
-
-      <!-- Columna izquierda: copy -->
-      <div class="hero__copy">
-        <div class="hero__credential reveal">
-          <span class="credential-dot"></span>
-          Abogada matriculada · Buenos Aires
-        </div>
-
-        <h1 class="hero__title reveal reveal--delay-1">
-          Tu problema<br />legal <em>tiene<br />solución.</em>
-        </h1>
-
-        <p class="hero__subtitle reveal reveal--delay-2">
-          Hola, soy <strong>Gimena Pérez</strong>. Te acompaño desde el primer mensaje hasta que tu caso quede resuelto — con atención directa, sin intermediarios y sin vueltas.
-        </p>
-
-        <div class="hero__trust reveal reveal--delay-3">
-          <span class="trust-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Primera consulta sin costo
-          </span>
-          <span class="trust-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Respuesta el mismo día
-          </span>
-          <span class="trust-pill">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Sin costos iniciales en accidentes
-          </span>
-        </div>
-
-        <div class="hero__actions reveal reveal--delay-4">
-          <a
-            href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20legal."
-            class="btn btn--wa"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+    <div class="container hero__inner">
+      <div class="hero__center reveal">
+        <img src="logo.png" alt="Estudio Jurídico Pérez — Logo" class="hero__logo" />
+        <p class="hero__eyebrow">Abogada · Buenos Aires</p>
+        <h1 class="hero__title">Gimena<br /><em>Pérez</em></h1>
+        <p class="hero__tagline">Tu problema legal tiene solución.<br />Te acompaño personalmente hasta resolverlo.</p>
+        <div class="hero__actions">
+          <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20hacer%20una%20consulta%20legal." class="btn btn--wa" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
             Escribime por WhatsApp
           </a>
-          <a href="#accidentes" class="btn btn--ghost">
-            Ver servicios
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-          </a>
+          <a href="#servicios" class="btn btn--outline-w">Ver servicios</a>
         </div>
       </div>
-
-      <!-- Columna derecha: tarjeta de presentación -->
-      <div class="hero__card reveal reveal--delay-2">
-        <div class="hcard">
-          <div class="hcard__avatar" aria-hidden="true">
-            <span class="hcard__initials">GP</span>
-            <span class="hcard__online" title="Disponible hoy"></span>
-          </div>
-          <div class="hcard__info">
-            <p class="hcard__name">Gimena Pérez</p>
-            <p class="hcard__role">Abogada · @abogada.gimenaperez</p>
-          </div>
-          <div class="hcard__areas">
-            <span>Accidentes</span>
-            <span class="hcard__area--priority">⚡ Urgente</span>
-            <span>Divorcios</span>
-            <span>Sucesiones</span>
-            <span>Contratos</span>
-          </div>
-          <a
-            href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20legal."
-            class="hcard__cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-            Consulta gratis hoy
-          </a>
-        </div>
-      </div>
-
     </div>
-
-    <!-- Scroll hint -->
-    <div class="hero__scroll" aria-hidden="true">
-      <div class="scroll-line"></div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span class="scroll-line"></span>
     </div>
   </section>
 
-  <!-- ===== BARRA DE CONFIANZA ===== -->
+  <!-- TRUST BAR -->
   <div class="trust-bar reveal">
     <div class="container trust-bar__inner">
-      <div class="trust-item">
+      <div class="tstat">
         <strong>+1.200</strong>
         <span>casos resueltos</span>
       </div>
-      <div class="trust-sep" aria-hidden="true"></div>
-      <div class="trust-item">
+      <div class="trust-div" aria-hidden="true"></div>
+      <div class="tstat">
         <strong>+15 años</strong>
-        <span>de trayectoria</span>
+        <span>de experiencia</span>
       </div>
-      <div class="trust-sep" aria-hidden="true"></div>
-      <div class="trust-item">
+      <div class="trust-div" aria-hidden="true"></div>
+      <div class="tstat">
         <strong>Atención directa</strong>
         <span>sin intermediarios</span>
       </div>
-      <div class="trust-sep" aria-hidden="true"></div>
-      <div class="trust-item">
-        <strong>Respuesta</strong>
-        <span>el mismo día</span>
+      <div class="trust-div" aria-hidden="true"></div>
+      <div class="tstat">
+        <strong>Primera consulta</strong>
+        <span>sin costo</span>
       </div>
     </div>
   </div>
 
-  <!-- ===== SECCIÓN ACCIDENTES (PRIORIDAD) ===== -->
-  <section class="section section--dark section--priority" id="accidentes">
-    <div class="priority-badge reveal">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-      Área prioritaria
-    </div>
+  <!-- SERVICIOS -->
+  <section class="section section--dark" id="servicios">
     <div class="container">
-      <div class="section__header reveal">
-        <p class="section__eyebrow">Accidentes</p>
-        <h2 class="section__title">¿Te lastimaste en el trabajo o en la calle?</h2>
-        <p class="section__lead">Tenés derecho a cobrar una indemnización. Yo te ayudo a reclamarla — sin costos iniciales, sin vueltas.</p>
+      <div class="services-header reveal">
+        <span class="section__label section__label--light">Áreas de práctica</span>
+        <h2 class="services-title">¿En qué puedo ayudarte?</h2>
       </div>
+      <div class="services-list">
 
-      <div class="cards-grid">
-        <div class="card reveal reveal--delay-1">
-          <div class="card__num" aria-hidden="true">01</div>
-          <h3>Accidentes Laborales</h3>
-          <p>¿Te caíste, cortaste o sufriste un accidente mientras trabajabas? Te acompaño para cobrar lo que te corresponde ante la ART o la Justicia.</p>
-        </div>
-        <div class="card reveal reveal--delay-2">
-          <div class="card__num" aria-hidden="true">02</div>
-          <h3>Accidentes de Tránsito</h3>
-          <p>Choque, atropellamiento, moto — si te lesionaron por culpa de otro, podés reclamar daños, gastos médicos y mucho más.</p>
-        </div>
-        <div class="card reveal reveal--delay-3">
-          <div class="card__num" aria-hidden="true">03</div>
-          <h3>Rechazos de ART</h3>
-          <p>¿La ART rechazó tu accidente o te dieron el alta sin recuperarte? Eso se puede revertir judicialmente. Escribime.</p>
-        </div>
-        <div class="card reveal reveal--delay-4">
-          <div class="card__num" aria-hidden="true">04</div>
-          <h3>Enfermedades Laborales</h3>
-          <p>Hipoacusia, hernias, lumbalgias, estrés — muchas enfermedades tienen indemnización si las causó el trabajo. Consultá.</p>
-        </div>
-      </div>
-
-      <div class="section__cta reveal">
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20tuve%20un%20accidente%20y%20quiero%20saber%20si%20tengo%20derecho%20a%20cobrar%20algo."
-          class="btn btn--wa btn--lg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          Tuve un accidente — Escribime gratis
+        <!-- ACCIDENTES -->
+        <a href="accidentes.html" class="service-row reveal">
+          <div class="service-row__num" aria-hidden="true">01</div>
+          <div class="service-row__body">
+            <h3 class="service-row__title">Accidentes</h3>
+            <p class="service-row__desc">Laborales, de tránsito, rechazos de ART y enfermedades profesionales. Sin costos iniciales.</p>
+            <div class="service-row__tags">
+              <span>Accidentes laborales</span>
+              <span>Tránsito</span>
+              <span>ART</span>
+              <span>Enfermedades laborales</span>
+            </div>
+          </div>
+          <div class="service-row__cta" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
         </a>
-        <p class="cta-note">Sin costos iniciales · Te respondo hoy</p>
+
+        <!-- DIVORCIOS -->
+        <a href="divorcios.html" class="service-row reveal reveal--delay-1">
+          <div class="service-row__num" aria-hidden="true">02</div>
+          <div class="service-row__body">
+            <h3 class="service-row__title">Divorcios</h3>
+            <p class="service-row__desc">Divorcio express, acuerdos de alimentos, cuidado personal y división de bienes.</p>
+            <div class="service-row__tags">
+              <span>Divorcio express</span>
+              <span>Alimentos</span>
+              <span>Cuidado personal</span>
+              <span>División de bienes</span>
+            </div>
+          </div>
+          <div class="service-row__cta" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- SUCESIONES -->
+        <a href="sucesiones.html" class="service-row reveal reveal--delay-2">
+          <div class="service-row__num" aria-hidden="true">03</div>
+          <div class="service-row__body">
+            <h3 class="service-row__title">Sucesiones</h3>
+            <p class="service-row__desc">Inicio de sucesión, declaratoria de herederos, inscripción de bienes y venta de propiedades.</p>
+            <div class="service-row__tags">
+              <span>Inicio sucesión</span>
+              <span>Declaratoria</span>
+              <span>Inscripción bienes</span>
+              <span>Venta propiedades</span>
+            </div>
+          </div>
+          <div class="service-row__cta" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- CONTRATOS -->
+        <a href="contratos.html" class="service-row reveal reveal--delay-3">
+          <div class="service-row__num" aria-hidden="true">04</div>
+          <div class="service-row__body">
+            <h3 class="service-row__title">Contratos</h3>
+            <p class="service-row__desc">Alquiler, comerciales, acuerdos privados y revisión de documentos antes de firmar.</p>
+            <div class="service-row__tags">
+              <span>Alquiler</span>
+              <span>Comerciales</span>
+              <span>Acuerdos privados</span>
+              <span>Revisión</span>
+            </div>
+          </div>
+          <div class="service-row__cta" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
 
-  <!-- ===== SECCIÓN DIVORCIOS ===== -->
-  <section class="section section--light" id="divorcios">
-    <div class="container">
-      <div class="section__header reveal">
-        <p class="section__eyebrow section__eyebrow--dark">Divorcios</p>
-        <h2 class="section__title section__title--dark">Un momento difícil merece apoyo real.</h2>
-        <p class="section__lead section__lead--dark">Te acompaño con discreción y claridad para que podás cerrar este capítulo y seguir adelante.</p>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card card--light reveal reveal--delay-1">
-          <div class="card__num card__num--dark" aria-hidden="true">01</div>
-          <h3 class="dark">Divorcio Express</h3>
-          <p class="dark">Sin peleas ni años de espera. Si están de acuerdo, el proceso puede ser rápido y sin complicaciones.</p>
-        </div>
-        <div class="card card--light reveal reveal--delay-2">
-          <div class="card__num card__num--dark" aria-hidden="true">02</div>
-          <h3 class="dark">Acuerdos de Alimentos</h3>
-          <p class="dark">Los hijos siempre son lo primero. Fijamos una cuota justa y legal que se pueda cobrar sin problemas.</p>
-        </div>
-        <div class="card card--light reveal reveal--delay-3">
-          <div class="card__num card__num--dark" aria-hidden="true">03</div>
-          <h3 class="dark">Cuidado Personal</h3>
-          <p class="dark">Acordamos o gestionamos judicialmente el régimen que más proteja el bienestar de tus hijos.</p>
-        </div>
-        <div class="card card--light reveal reveal--delay-4">
-          <div class="card__num card__num--dark" aria-hidden="true">04</div>
-          <h3 class="dark">División de Bienes</h3>
-          <p class="dark">Te asesoro para proteger lo que te corresponde durante la liquidación de la sociedad conyugal.</p>
-        </div>
-      </div>
-
-      <div class="section__cta reveal">
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20divorciarme%20y%20necesito%20orientaci%C3%B3n."
-          class="btn btn--primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          Quiero divorciarme — Consultá gratis
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECCIÓN SUCESIONES ===== -->
-  <section class="section section--beige" id="sucesiones">
-    <div class="container">
-      <div class="section__header reveal">
-        <p class="section__eyebrow section__eyebrow--dark">Sucesiones</p>
-        <h2 class="section__title section__title--dark">Perder a alguien es difícil. Los trámites, no tienen que serlo.</h2>
-        <p class="section__lead section__lead--dark">Me ocupo de todo el proceso para que vos y tu familia puedan enfocarse en lo que importa.</p>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card card--beige reveal reveal--delay-1">
-          <div class="card__num card__num--dark" aria-hidden="true">01</div>
-          <h3 class="dark">Inicio de Sucesión</h3>
-          <p class="dark">Abro el expediente y te guío desde el primer paso hasta el último trámite, sin perderte en el proceso.</p>
-        </div>
-        <div class="card card--beige reveal reveal--delay-2">
-          <div class="card__num card__num--dark" aria-hidden="true">02</div>
-          <h3 class="dark">Declaratoria de Herederos</h3>
-          <p class="dark">Obtenemos el reconocimiento judicial que necesitás para poder actuar sobre los bienes de la herencia.</p>
-        </div>
-        <div class="card card--beige reveal reveal--delay-3">
-          <div class="card__num card__num--dark" aria-hidden="true">03</div>
-          <h3 class="dark">Inscripción de Bienes</h3>
-          <p class="dark">Paso propiedades, vehículos y cuentas a nombre de los herederos con todos los trámites gestionados.</p>
-        </div>
-        <div class="card card--beige reveal reveal--delay-4">
-          <div class="card__num card__num--dark" aria-hidden="true">04</div>
-          <h3 class="dark">Venta de Propiedades</h3>
-          <p class="dark">Coordino la venta de inmuebles hereditarios y la distribución del dinero entre todos los herederos.</p>
-        </div>
-      </div>
-
-      <div class="section__cta reveal">
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20necesito%20iniciar%20una%20sucesi%C3%B3n%20y%20no%20s%C3%A9%20por%20d%C3%B3nde%20empezar."
-          class="btn btn--primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          Iniciar Sucesión — Consultá gratis
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECCIÓN CONTRATOS ===== -->
-  <section class="section section--dark" id="contratos">
-    <div class="container">
-      <div class="section__header reveal">
-        <p class="section__eyebrow">Contratos</p>
-        <h2 class="section__title">Firmá con tranquilidad,<br />sabiendo que estás protegido.</h2>
-        <p class="section__lead">Un buen contrato evita problemas futuros. Te ayudo a redactarlo o a revisarlo antes de que lo firmes.</p>
-      </div>
-
-      <div class="cards-grid">
-        <div class="card reveal reveal--delay-1">
-          <div class="card__num" aria-hidden="true">01</div>
-          <h3>Contratos de Alquiler</h3>
-          <p>Redacto contratos de locación claros y legales, que protejan tanto al propietario como al inquilino.</p>
-        </div>
-        <div class="card reveal reveal--delay-2">
-          <div class="card__num" aria-hidden="true">02</div>
-          <h3>Contratos Comerciales</h3>
-          <p>Acuerdos entre empresas, sociedades o servicios — con cláusulas claras que después se puedan ejecutar.</p>
-        </div>
-        <div class="card reveal reveal--delay-3">
-          <div class="card__num" aria-hidden="true">03</div>
-          <h3>Acuerdos Privados</h3>
-          <p>Acuerdos entre particulares con validez legal, cubriendo todos los casos posibles por si algo cambia.</p>
-        </div>
-        <div class="card reveal reveal--delay-4">
-          <div class="card__num" aria-hidden="true">04</div>
-          <h3>Revisión de Contratos</h3>
-          <p>¿Te dieron un contrato para firmar? Te lo reviso antes para que sepas exactamente qué estás aceptando.</p>
-        </div>
-      </div>
-
-      <div class="section__cta reveal">
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20hacer%20o%20revisar%20un%20contrato."
-          class="btn btn--wa btn--lg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-          Hacer un Contrato — Consultá gratis
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== SECCIÓN SOBRE MÍ ===== -->
-  <section class="section section--about" id="sobre-mi">
+  <!-- SOBRE MÍ -->
+  <section class="section section--beige" id="sobre-mi">
     <div class="container about__grid">
       <div class="about__visual reveal">
-        <div class="about__photo-frame">
-          <div class="about__photo-placeholder" aria-label="Foto de Gimena Pérez">
-            <span>GP</span>
-          </div>
-          <div class="about__photo-accent" aria-hidden="true"></div>
+        <div class="about__frame">
+          <img src="logo.png" alt="Estudio Jurídico Pérez" class="about__logo-large" />
         </div>
       </div>
       <div class="about__content reveal reveal--delay-1">
-        <p class="section__eyebrow" style="text-align:left; margin-bottom: 16px;">Sobre mí</p>
+        <span class="section__label">Sobre mí</span>
         <h2 class="about__title">Hola, soy <em>Gimena.</em></h2>
-        <p class="about__text">
-          Soy abogada con más de 15 años de experiencia resolviendo casos reales para personas reales. Me especialicé en las áreas que más afectan a las familias: accidentes, divorcios, sucesiones y contratos.
-        </p>
-        <p class="about__text">
-          Creo que el derecho tiene que ser accesible. Por eso hablo claro, respondo rápido y acompaño a cada cliente de forma personal. Cuando trabajás conmigo, hablás directamente conmigo — sin pasarte por diferentes personas.
-        </p>
-        <div class="about__badges">
-          <span class="about__badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Abogada matriculada
-          </span>
-          <span class="about__badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            +15 años de experiencia
-          </span>
-          <span class="about__badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Atención directa y personal
-          </span>
-          <span class="about__badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-            Primera consulta gratis
-          </span>
-        </div>
-        <a
-          href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20me%20gustar%C3%ADa%20contarte%20mi%20situaci%C3%B3n."
-          class="btn btn--wa"
-          target="_blank"
-          rel="noopener noreferrer"
-          style="margin-top: 8px;"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
+        <p class="about__text">Soy abogada con más de 15 años acompañando a personas en los momentos más difíciles: un accidente, un divorcio, la pérdida de un ser querido, un contrato que no cierra.</p>
+        <p class="about__text">Cuando me contratás, hablás directamente conmigo — sin secretarias, sin pasarte por distintas personas. Eso es lo que me diferencia.</p>
+        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20contarte%20mi%20situaci%C3%B3n." class="btn btn--dark" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
           Contame tu caso
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ===== SECCIÓN CONTACTO / CIERRE ===== -->
-  <section class="section section--closing" id="contacto">
-    <div class="container closing__inner">
-      <div class="closing__text reveal">
-        <p class="section__eyebrow">Contacto</p>
-        <h2 class="closing__title">¿En qué te puedo ayudar hoy?</h2>
-        <p class="closing__sub">Elegí tu situación y te escribo directamente. Sin formularios, sin esperas, sin filtros.</p>
-      </div>
-      <div class="closing__buttons reveal reveal--delay-1">
-        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20tuve%20un%20accidente%20y%20quiero%20saber%20si%20tengo%20derecho%20a%20cobrar%20algo." class="contact-pill" target="_blank" rel="noopener noreferrer">
-          <span class="contact-pill__icon">⚡</span>
-          <span>
-            <strong>Tuve un accidente</strong>
-            <small>Laboral, tránsito o ART</small>
-          </span>
-          <svg class="contact-pill__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20divorciarme%20y%20necesito%20orientaci%C3%B3n." class="contact-pill" target="_blank" rel="noopener noreferrer">
-          <span class="contact-pill__icon">💔</span>
-          <span>
-            <strong>Quiero divorciarme</strong>
-            <small>Express, acuerdos, bienes</small>
-          </span>
-          <svg class="contact-pill__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20necesito%20iniciar%20una%20sucesi%C3%B3n%20y%20no%20s%C3%A9%20por%20d%C3%B3nde%20empezar." class="contact-pill" target="_blank" rel="noopener noreferrer">
-          <span class="contact-pill__icon">🏠</span>
-          <span>
-            <strong>Iniciar una sucesión</strong>
-            <small>Herederos, bienes, trámites</small>
-          </span>
-          <svg class="contact-pill__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20hacer%20o%20revisar%20un%20contrato." class="contact-pill" target="_blank" rel="noopener noreferrer">
-          <span class="contact-pill__icon">📄</span>
-          <span>
-            <strong>Hacer un contrato</strong>
-            <small>Alquiler, comercial, revisión</small>
-          </span>
-          <svg class="contact-pill__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__top">
+      <div>
         <div class="footer__brand">
-          <span class="logo-symbol">⚖</span>
+          <img src="logo.png" alt="Logo" class="footer__logo-img" />
           <div>
-            <p class="footer__name">Gimena Pérez</p>
-            <p class="footer__role">Abogada</p>
+            <p class="footer__brand-name">Gimena Pérez</p>
+            <p class="footer__brand-role">Abogada · Estudio Jurídico</p>
           </div>
         </div>
-        <a
-          href="https://www.instagram.com/abogada.gimenaperez/"
-          class="footer__instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram de Gimena Pérez"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <p class="footer__disclaimer">La información de este sitio es de carácter informativo y no constituye asesoramiento legal. Consultá directamente para analizar tu caso.</p>
+        <p class="footer__copy">&copy; 2026 Abogada Gimena Pérez. Todos los derechos reservados.</p>
+      </div>
+      <div class="footer__links">
+        <a href="accidentes.html">Accidentes</a>
+        <a href="divorcios.html">Divorcios</a>
+        <a href="sucesiones.html">Sucesiones</a>
+        <a href="contratos.html">Contratos</a>
+        <a href="https://www.instagram.com/abogada.gimenaperez/" class="footer__instagram" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           @abogada.gimenaperez
         </a>
       </div>
-      <p class="footer__disclaimer">La información publicada en este sitio tiene carácter exclusivamente informativo y no constituye asesoramiento legal. Para analizar tu caso, consultá directamente.</p>
-      <p class="footer__copy">&copy; 2026 Abogada Gimena Pérez. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- ===== WHATSAPP FLOTANTE ===== -->
-  <a
-    href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20legal."
-    class="wa-float"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Escribir a Gimena por WhatsApp"
-  >
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
-    <span class="wa-float__label">Escribime</span>
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/5491100000000?text=Hola%20Gimena%2C%20quiero%20hacer%20una%20consulta." class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
   </a>
 
   <script src="main.js"></script>
