@@ -64,25 +64,22 @@ button { cursor: pointer; }
    REVEAL ANIMATION
    ============================================= */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.7s var(--ease),
-              transform 0.7s var(--ease);
-  will-change: opacity, transform;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal--delay-1 { transition-delay: 0.07s; }
-.reveal--delay-2 { transition-delay: 0.14s; }
-.reveal--delay-3 { transition-delay: 0.21s; }
-.reveal--delay-4 { transition-delay: 0.28s; }
+/* .reveal / .reveal--left — initial invisible state for GSAP.
+   GSAP (animations.js) takes full ownership of opacity, visibility
+   and transform on these elements. The CSS rules below are a
+   no-JS safety net only; transitions are intentionally removed
+   so they don't fight gsap.fromTo() / autoAlpha. */
+.reveal,
 .reveal--left {
-  transform: translateX(-20px);
+  opacity: 0;
+  visibility: hidden;  /* matches GSAP autoAlpha:0 behaviour */
 }
-.reveal--left.visible { transform: translateX(0); }
+/* No-JS fallback: make everything visible */
+.no-js .reveal,
+.no-js .reveal--left {
+  opacity: 1;
+  visibility: visible;
+}
 
 /* =============================================
    NAVBAR
@@ -441,6 +438,7 @@ button { cursor: pointer; }
 /* ACCESIBILIDAD */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-  .reveal { opacity: 1; transform: none; }
+  /* GSAP animations.js handles .reveal visibility for prefers-reduced-motion
+     via gsap.matchMedia() — no CSS override needed here. */
 }
 :focus-visible { outline: 2px solid var(--white); outline-offset: 3px; border-radius: 2px; }

@@ -33,18 +33,6 @@ if (burger && navLinks) {
   });
 }
 
-/* ---- SCROLL REVEAL ---- */
-const revealObs = new IntersectionObserver(
-  entries => entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObs.unobserve(e.target);
-    }
-  }),
-  { threshold: 0.1, rootMargin: '0px 0px -44px 0px' }
-);
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
 /* ---- SMOOTH SCROLL (index links only) ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
