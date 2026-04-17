@@ -328,6 +328,13 @@ button { cursor: pointer; }
   text-transform: uppercase;
 }
 
+.footer__matricula {
+  font-size: 0.68rem;
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
 .footer__disclaimer {
   font-size: 0.72rem;
   color: var(--gray-2);

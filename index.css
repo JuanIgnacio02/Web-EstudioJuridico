@@ -103,6 +103,51 @@
 }
 
 /* =============================================
+   BARRA DE MATRÍCULA
+   ============================================= */
+
+.matricula-bar {
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 14px 0;
+}
+
+.matricula-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.matricula-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--gray-2);
+}
+
+.matricula-item svg {
+  flex-shrink: 0;
+  color: var(--gray-1);
+}
+
+.matricula-sep {
+  color: var(--gray-1);
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .matricula-sep { display: none; }
+  .matricula-bar__inner { flex-direction: column; gap: 6px; text-align: center; }
+}
+
+/* =============================================
    LP SECTIONS (secciones de servicio)
    ============================================= */
 
