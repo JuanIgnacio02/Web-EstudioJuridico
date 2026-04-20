@@ -1,6 +1,5 @@
 /* =============================================
-   INDEX PAGE — Styles v4
-   Brand Kit: Cormorant Garamond + DM Sans
+   INDEX PAGE — Styles v3
    ============================================= */
 
 /* ---- HERO ---- */
@@ -9,13 +8,13 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  background: var(--negro);
+  background: var(--black);
   overflow: hidden;
 }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 70% at 50% 45%, rgba(232,226,216,0.04) 0%, transparent 70%);
+  background: radial-gradient(ellipse 70% 70% at 50% 45%, rgba(255,255,255,0.025) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero__bg::before {
@@ -23,8 +22,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(232,226,216,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232,226,216,0.03) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
   background-size: 70px 70px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 5%, transparent 100%);
 }
@@ -39,7 +38,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 680px;
+  max-width: 640px;
   margin: 0 auto;
 }
 .hero__logo {
@@ -48,48 +47,44 @@
   object-fit: cover;
   margin-bottom: 32px;
   box-shadow:
-    0 0 0 1px rgba(232,226,216,0.1),
-    0 0 0 8px rgba(232,226,216,0.03),
+    0 0 0 1px rgba(255,255,255,0.07),
+    0 0 0 8px rgba(255,255,255,0.02),
     0 20px 56px rgba(0,0,0,0.6);
 }
 .hero__eyebrow {
-  font-family: var(--sans);
-  font-size: 11px;
+  font-size: 0.68rem;
   font-weight: 400;
-  letter-spacing: 2.5px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gris);
-  margin-bottom: 20px;
+  color: var(--gray-2);
+  margin-bottom: 18px;
 }
 .hero__title {
   font-family: var(--serif);
-  font-size: clamp(3.2rem, 8vw, 3.375rem); /* ~54px at base */
-  font-weight: 300;
-  line-height: 1.05;
-  color: var(--blanco);
-  letter-spacing: -1px;
+  font-size: clamp(3.8rem, 9vw, 7rem);
+  font-weight: 400;
+  line-height: 0.97;
+  color: var(--white);
+  letter-spacing: -0.03em;
   margin-bottom: 22px;
 }
-.hero__title em { font-style: italic; color: var(--gris-claro); }
+.hero__title em { font-style: italic; color: var(--gray-4); }
 .hero__tagline {
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
   font-weight: 300;
-  color: var(--gris);
-  line-height: 1.75;
+  color: var(--gray-2);
+  line-height: 1.7;
   margin-bottom: 14px;
-  max-width: 520px;
 }
 .hero__areas {
-  font-family: var(--sans);
-  font-size: 11px;
+  font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 2.5px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gris-oscuro);
-  margin-bottom: 44px;
+  color: var(--gray-1);
+  margin-bottom: 40px;
 }
-.hero__btn { }
+.hero__btn { padding: 16px 36px; font-size: 0.9rem; }
 .hero__scroll-hint {
   position: absolute;
   bottom: 28px;
@@ -99,7 +94,7 @@
 .scroll-line {
   display: block;
   width: 1px; height: 54px;
-  background: linear-gradient(to bottom, rgba(232,226,216,0.3), transparent);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
   animation: scrollPulse 2.2s ease-in-out infinite;
 }
 @keyframes scrollPulse {
@@ -112,7 +107,7 @@
    ============================================= */
 
 .matricula-bar {
-  background: var(--negro);
+  background: var(--dark);
   border-top: 1px solid rgba(255,255,255,0.04);
   border-bottom: 1px solid rgba(255,255,255,0.04);
   padding: 14px 0;
@@ -130,21 +125,20 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--sans);
-  font-size: 11px;
+  font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.06em;
-  color: var(--gris-oscuro);
+  color: var(--gray-2);
 }
 
 .matricula-item svg {
   flex-shrink: 0;
-  color: var(--gris-oscuro);
+  color: var(--gray-1);
 }
 
 .matricula-sep {
-  color: var(--gris-oscuro);
-  font-size: 11px;
+  color: var(--gray-1);
+  font-size: 0.68rem;
   line-height: 1;
 }
 
@@ -159,20 +153,16 @@
 
 .lp-section { padding: 96px 0; }
 
-/* Section backgrounds per brand kit */
 .lp-section--accidentes {
-  background: var(--negro);
-  border-top: 1px solid rgba(232,226,216,0.12);
+  background: var(--dark);
+  border-top: 2px solid var(--white);
   position: relative;
 }
-.lp-section--divorcios  { background: var(--beige-claro); }
-.lp-section--sucesiones { background: var(--beige); }
-.lp-section--contratos  { background: var(--blanco); }
-.lp-section--light      { background: var(--beige-claro); }
-.lp-section--dark       { background: var(--beige); }
-.lp-section--beige      { background: var(--beige); }
+.lp-section--light  { background: var(--off-white); }
+.lp-section--dark   { background: var(--dark-2); }
+.lp-section--beige  { background: var(--beige); }
 
-/* Priority tag (accidentes — stays white/light) */
+/* Priority tag */
 .lp-priority-tag {
   position: absolute;
   top: 0; left: 50%;
@@ -180,19 +170,18 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--blanco);
-  color: var(--negro);
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   padding: 4px 16px;
-  border-radius: 0 0 0 0;
+  border-radius: 0 0 8px 8px;
 }
 .lp-priority-dot {
   width: 5px; height: 5px;
-  background: var(--negro);
+  background: var(--black);
   border-radius: 50%;
   animation: pulse 2s ease-in-out infinite;
 }
@@ -211,71 +200,37 @@
 .lp-grid--reverse { direction: rtl; }
 .lp-grid--reverse > * { direction: ltr; }
 
-/* Section number decoration */
+/* Content */
 .lp-num {
   font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 300;
-  color: var(--beige);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--gray-1);
   display: block;
-  margin-bottom: 8px;
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
+  margin-bottom: 14px;
 }
-/* On dark sections (negro bg) the beige number reads fine.
-   On light sections override to a subtle dark-beige */
-.lp-section--divorcios .lp-num,
-.lp-section--sucesiones .lp-num,
-.lp-section--contratos .lp-num,
-.lp-section--light .lp-num,
-.lp-section--dark .lp-num,
-.lp-section--beige .lp-num {
-  color: var(--gris-claro);
-}
-.lp-num--dark { color: var(--gris-claro); }
+.lp-num--dark { color: var(--gray-2); }
 
-/* Titles */
 .lp-title {
   font-family: var(--serif);
-  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
   font-weight: 400;
-  color: var(--blanco);
-  letter-spacing: -0.02em;
+  color: var(--white);
+  letter-spacing: -0.03em;
   line-height: 1.05;
   margin-bottom: 18px;
 }
-/* Light-bg sections — dark text override for .lp-section--dark modifier
-   (covers divorcios, sucesiones, contratos which use light bgs) */
-.lp-section--divorcios .lp-title,
-.lp-section--sucesiones .lp-title,
-.lp-section--contratos .lp-title,
-.lp-section--light .lp-title,
-.lp-section--dark .lp-title,
-.lp-section--beige .lp-title {
-  color: var(--negro);
-}
-.lp-title--dark { color: var(--negro); }
+.lp-title--dark { color: var(--black); }
 
-/* Lead */
 .lp-lead {
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
   font-weight: 300;
-  color: var(--gris);
-  line-height: 1.75;
+  color: var(--gray-2);
+  line-height: 1.8;
   margin-bottom: 24px;
   max-width: 460px;
 }
-.lp-section--divorcios .lp-lead,
-.lp-section--sucesiones .lp-lead,
-.lp-section--contratos .lp-lead,
-.lp-section--light .lp-lead,
-.lp-section--dark .lp-lead,
-.lp-section--beige .lp-lead {
-  color: var(--gris-oscuro);
-}
-.lp-lead--dark { color: var(--gris-oscuro); }
+.lp-lead--dark { color: var(--gray-1); }
 
 /* Lista de servicios */
 .lp-list {
@@ -289,35 +244,18 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--gris);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gray-3);
 }
 .lp-list li::before {
   content: '';
   width: 16px; height: 1px;
-  background: var(--gris-oscuro);
+  background: var(--gray-1);
   flex-shrink: 0;
 }
-.lp-section--divorcios .lp-list li,
-.lp-section--sucesiones .lp-list li,
-.lp-section--contratos .lp-list li,
-.lp-section--light .lp-list li,
-.lp-section--dark .lp-list li,
-.lp-section--beige .lp-list li {
-  color: var(--gris-oscuro);
-}
-.lp-section--divorcios .lp-list li::before,
-.lp-section--sucesiones .lp-list li::before,
-.lp-section--contratos .lp-list li::before,
-.lp-section--light .lp-list li::before,
-.lp-section--dark .lp-list li::before,
-.lp-section--beige .lp-list li::before {
-  background: var(--gris);
-}
-.lp-list--dark li { color: var(--gris-oscuro); }
-.lp-list--dark li::before { background: var(--gris); }
+.lp-list--dark li { color: var(--gray-1); }
+.lp-list--dark li::before { background: var(--gray-2); }
 
 /* Actions */
 .lp-actions {
@@ -327,44 +265,14 @@
   flex-wrap: wrap;
 }
 .lp-more {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gris);
-  transition: color 0.22s var(--ease), letter-spacing 0.22s var(--ease);
+  font-size: 0.8rem;
+  color: var(--gray-2);
+  transition: color 0.22s, letter-spacing 0.22s;
+  letter-spacing: 0.02em;
 }
-.lp-more:hover { color: var(--blanco); letter-spacing: 2px; }
-.lp-section--divorcios .lp-more,
-.lp-section--sucesiones .lp-more,
-.lp-section--contratos .lp-more,
-.lp-section--light .lp-more,
-.lp-section--dark .lp-more,
-.lp-section--beige .lp-more {
-  color: var(--gris-oscuro);
-}
-.lp-section--divorcios .lp-more:hover,
-.lp-section--sucesiones .lp-more:hover,
-.lp-section--contratos .lp-more:hover,
-.lp-section--light .lp-more:hover,
-.lp-section--dark .lp-more:hover,
-.lp-section--beige .lp-more:hover {
-  color: var(--negro);
-}
-.lp-more--dark { color: var(--gris-oscuro); }
-.lp-more--dark:hover { color: var(--negro); }
-
-/* Sucesiones: btn--outline-w override (white outline → dark outline on light bg) */
-.lp-section--sucesiones .btn--outline-w,
-.lp-section--dark .btn--outline-w {
-  color: var(--negro);
-  border-color: rgba(14,14,12,0.25);
-}
-.lp-section--sucesiones .btn--outline-w:hover,
-.lp-section--dark .btn--outline-w:hover {
-  border-color: var(--negro);
-}
+.lp-more:hover { color: var(--white); letter-spacing: 0.05em; }
+.lp-more--dark { color: var(--gray-2); }
+.lp-more--dark:hover { color: var(--black); }
 
 /* Visual card */
 .lp-visual {
@@ -375,7 +283,7 @@
 .lp-card {
   width: 100%;
   max-width: 320px;
-  border-radius: 0;
+  border-radius: 16px;
   padding: 44px 36px;
   display: flex;
   flex-direction: column;
@@ -385,47 +293,46 @@
 .lp-card:hover { transform: translateY(-6px); }
 
 .lp-card--dark {
-  background: rgba(232,226,216,0.04);
-  border: 1px solid var(--beige);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .lp-card--beige {
-  background: var(--beige);
-  border: 1px solid var(--gris-claro);
+  background: var(--beige-2);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 .lp-card--white {
-  background: var(--blanco);
-  border: 1px solid var(--beige);
-  box-shadow: 0 4px 24px rgba(14,14,12,0.06);
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
 }
 
 .lp-card__label {
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 2.5px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gris);
+  color: var(--gray-2);
 }
-.lp-card__label--dark { color: var(--gris-oscuro); }
+.lp-card__label--dark { color: var(--gray-1); }
 
 .lp-card__value {
   font-family: var(--serif);
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 400;
-  color: var(--blanco);
+  color: var(--white);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
-.lp-card__value--dark { color: var(--negro); }
+.lp-card__value--dark { color: var(--black); }
 
 /* =============================================
    SECCIÓN DIFERENCIAL
    ============================================= */
 
 .lp-diferencial {
-  background: var(--beige-claro);
+  background: var(--black);
   padding: 96px 0;
-  border-top: 1px solid var(--beige);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 .lp-diferencial__inner {
   display: grid;
@@ -442,18 +349,17 @@
 }
 .dif-title {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
   font-weight: 400;
-  color: var(--negro);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
   margin-bottom: 16px;
 }
 .dif-sub {
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: 0.9rem;
   font-weight: 300;
-  color: var(--gris-oscuro);
+  color: var(--gray-2);
   line-height: 1.75;
   margin-bottom: 36px;
   max-width: 520px;
@@ -465,20 +371,17 @@
 }
 .dif-btn {
   padding: 11px 22px;
-  border: 1px solid var(--gris-claro);
-  border-radius: 0;
-  font-family: var(--sans);
-  font-size: 11px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  font-size: 0.8rem;
   font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gris-oscuro);
-  transition: border-color 0.22s var(--ease), color 0.22s var(--ease), background 0.22s var(--ease);
+  color: rgba(255,255,255,0.65);
+  transition: border-color 0.22s, color 0.22s, background 0.22s;
 }
 .dif-btn:hover {
-  border-color: var(--gris-oscuro);
-  color: var(--negro);
-  background: rgba(14,14,12,0.04);
+  border-color: rgba(255,255,255,0.5);
+  color: var(--white);
+  background: rgba(255,255,255,0.04);
 }
 
 /* =============================================
@@ -507,7 +410,7 @@
 @media (max-width: 600px) {
   .lp-section { padding: 72px 0; }
   .lp-diferencial { padding: 72px 0; }
-  .lp-priority-tag { font-size: 10px; }
+  .lp-priority-tag { font-size: 0.55rem; }
   .lp-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
   .hero__btn { width: 100%; justify-content: center; }
   .dif-btns { flex-direction: column; }
@@ -516,5 +419,5 @@
 
 @media (max-width: 400px) {
   .hero__logo { width: 86px; height: 86px; }
-  .hero__title { font-size: 2.8rem; }
+  .hero__title { font-size: 3.2rem; }
 }

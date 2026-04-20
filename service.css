@@ -1,6 +1,5 @@
 /* =============================================
-   SERVICE PAGES — Shared Styles v4
-   Brand Kit: Cormorant Garamond + DM Sans
+   SERVICE PAGES — Shared Styles
    ============================================= */
 
 /* ---- PAGE HERO ---- */
@@ -10,11 +9,12 @@
   display: flex;
   align-items: center;
 }
-.page-hero--dark    { background: var(--negro); }
+.page-hero--dark    { background: var(--black); }
 .page-hero--beige   { background: var(--beige); }
-.page-hero--off     { background: var(--beige-claro); }
+.page-hero--off     { background: var(--off-white); }
 
 .page-hero__inner { width: 100%; }
+
 .page-hero__content { max-width: 640px; }
 
 /* Back link */
@@ -22,69 +22,48 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gris);
+  font-size: 0.75rem;
+  color: var(--gray-2);
+  letter-spacing: 0.04em;
   margin-bottom: 36px;
-  transition: color 0.22s var(--ease), gap 0.22s var(--ease);
+  transition: color 0.22s, gap 0.22s;
 }
-.back-link:hover { color: var(--blanco); gap: 10px; }
-.back-link--dark { color: var(--gris-oscuro); }
-.back-link--dark:hover { color: var(--negro); }
+.back-link:hover { color: var(--white); gap: 10px; }
+.back-link--dark { color: var(--gray-1); }
+.back-link--dark:hover { color: var(--black); }
 
 /* Page number */
 .page-num {
   font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 300;
-  color: var(--beige);
-  margin-bottom: 8px;
-  line-height: 1;
-  display: block;
-  pointer-events: none;
-  user-select: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--gray-1);
+  margin-bottom: 14px;
 }
-/* On light hero bgs */
-.page-hero--beige .page-num,
-.page-hero--off .page-num {
-  color: var(--gris-claro);
-}
-.page-num--dark { color: var(--gris-claro); }
+.page-num--dark { color: var(--gray-2); }
 
-/* Page title — H1 scale */
+/* Page title */
 .page-hero__title {
   font-family: var(--serif);
-  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-size: clamp(3.5rem, 9vw, 6.5rem);
   font-weight: 400;
-  line-height: 1.0;
-  color: var(--blanco);
-  letter-spacing: -0.02em;
+  line-height: 0.96;
+  color: var(--white);
+  letter-spacing: -0.03em;
   margin-bottom: 24px;
 }
-.page-hero--beige .page-hero__title,
-.page-hero--off .page-hero__title {
-  color: var(--negro);
-}
-.page-hero__title--dark { color: var(--negro); }
+.page-hero__title--dark { color: var(--black); }
 
 /* Lead text */
 .page-hero__lead {
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
   font-weight: 300;
-  color: var(--gris);
-  line-height: 1.75;
+  color: var(--gray-2);
+  line-height: 1.8;
   margin-bottom: 28px;
   max-width: 520px;
 }
-.page-hero--beige .page-hero__lead,
-.page-hero--off .page-hero__lead {
-  color: var(--gris-oscuro);
-}
-.page-hero__lead--dark { color: var(--gris-oscuro); }
+.page-hero__lead--dark { color: var(--gray-1); }
 
 /* Pills */
 .page-hero__pills {
@@ -95,23 +74,15 @@
 }
 .page-hero__pills span {
   padding: 5px 14px;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 0;
-  font-family: var(--sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--gris-claro);
-}
-.page-hero--beige .page-hero__pills span,
-.page-hero--off .page-hero__pills span {
-  border-color: var(--gris-claro);
-  color: var(--gris-oscuro);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50px;
+  font-size: 0.7rem;
+  color: var(--gray-3);
+  letter-spacing: 0.03em;
 }
 .page-hero__pills--dark span {
-  border-color: var(--gris-claro);
-  color: var(--gris-oscuro);
+  border-color: rgba(0,0,0,0.15);
+  color: var(--gray-1);
 }
 
 /* ---- SUB-CARDS GRID ---- */
@@ -119,79 +90,45 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1px;
-  background: var(--beige);
-  border: 1px solid var(--beige);
-  border-radius: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
   overflow: hidden;
   margin-top: 40px;
 }
 
-/* On dark section backgrounds */
-.section--dark .sub-grid,
-.section--dark-2 .sub-grid {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.06);
-}
-
 .sub-card {
-  background: var(--negro);
+  background: var(--dark);
   padding: 40px 36px;
-  transition: background 0.25s var(--ease);
+  transition: background 0.25s;
 }
-.sub-card:hover { background: var(--gris-oscuro); }
-
-/* On light section backgrounds */
-.section--off .sub-card,
-.section--beige .sub-card {
-  background: var(--blanco);
-}
-.section--off .sub-card:hover,
-.section--beige .sub-card:hover {
-  background: var(--beige-claro);
-}
+.sub-card:hover { background: var(--dark-2); }
 
 .sub-card__num {
   font-family: var(--serif);
-  font-size: 56px;
-  font-weight: 300;
-  color: var(--beige);
-  margin-bottom: 12px;
-  opacity: 0.5;
-  line-height: 1;
-  display: block;
-  user-select: none;
-}
-/* Num on light cards */
-.section--off .sub-card__num,
-.section--beige .sub-card__num {
-  color: var(--gris-claro);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--gray-1);
+  margin-bottom: 20px;
+  opacity: 0.6;
 }
 
 .sub-card__title {
   font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--blanco);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
   letter-spacing: -0.01em;
   margin-bottom: 14px;
   line-height: 1.25;
 }
-.section--off .sub-card__title,
-.section--beige .sub-card__title {
-  color: var(--negro);
-}
 
 .sub-card__text {
-  font-family: var(--sans);
-  font-size: 14px;
+  font-size: 0.84rem;
   font-weight: 300;
-  color: var(--gris);
+  color: var(--gray-2);
   line-height: 1.75;
   margin-bottom: 20px;
-}
-.section--off .sub-card__text,
-.section--beige .sub-card__text {
-  color: var(--gris-oscuro);
 }
 
 .sub-card__list {
@@ -201,32 +138,26 @@
   gap: 7px;
 }
 .sub-card__list li {
-  font-family: var(--sans);
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--gris);
-  padding-left: 16px;
+  font-size: 0.78rem;
+  color: var(--gray-2);
+  padding-left: 14px;
   position: relative;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 .sub-card__list li::before {
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--gris-oscuro);
+  color: var(--gray-1);
   font-size: 0.65rem;
-}
-.section--off .sub-card__list li,
-.section--beige .sub-card__list li {
-  color: var(--gris-oscuro);
 }
 
 /* ---- PROCESO (STEPS) ---- */
 .process-title {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 400;
-  color: var(--negro);
+  color: var(--black);
   letter-spacing: -0.02em;
   margin-bottom: 52px;
   margin-top: 8px;
@@ -246,14 +177,14 @@
 
 .step__num {
   width: 44px; height: 44px;
-  border-radius: 0;
-  background: var(--negro);
-  color: var(--blanco);
+  border-radius: 50%;
+  background: var(--black);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   margin-bottom: 20px;
   flex-shrink: 0;
@@ -261,23 +192,22 @@
 
 .step__title {
   font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 400;
-  color: var(--negro);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--black);
   margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .step__text {
-  font-family: var(--sans);
-  font-size: 14px;
+  font-size: 0.84rem;
   font-weight: 300;
-  color: var(--gris-oscuro);
+  color: var(--gray-1);
   line-height: 1.75;
 }
 
 .step__arrow {
-  color: var(--gris-claro);
+  color: var(--gray-4);
   padding: 0 8px;
   margin-top: 10px;
   flex-shrink: 0;
@@ -300,20 +230,19 @@
 
 .cta-title {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 400;
-  color: var(--blanco);
+  color: var(--white);
   letter-spacing: -0.02em;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
 .cta-sub {
-  font-family: var(--sans);
-  font-size: 15px;
+  font-size: 0.88rem;
   font-weight: 300;
-  color: var(--gris);
-  line-height: 1.75;
+  color: var(--gray-2);
+  line-height: 1.6;
 }
 
 /* ---- OTRAS ÁREAS ---- */
@@ -323,18 +252,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: var(--beige);
-  border: 1px solid var(--beige);
-  border-radius: 0;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
   overflow: hidden;
   margin-top: 28px;
-}
-
-/* On dark section bg */
-.section--dark-2 .other-grid,
-.section--dark .other-grid {
-  background: rgba(255,255,255,0.05);
-  border-color: rgba(255,255,255,0.05);
 }
 
 .other-card {
@@ -342,22 +264,20 @@
   align-items: center;
   gap: 16px;
   padding: 24px 28px;
-  background: var(--negro);
-  transition: background 0.22s var(--ease), padding 0.22s var(--ease);
+  background: var(--dark-2);
+  transition: background 0.22s, padding 0.22s;
 }
 .other-card:hover {
-  background: var(--gris-oscuro);
+  background: rgba(255,255,255,0.04);
   padding-left: 36px;
 }
 .other-card:hover svg { transform: translateX(4px); }
 
 .other-card__num {
   font-family: var(--serif);
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--gris);
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 0.65rem;
+  color: var(--gray-1);
+  letter-spacing: 0.1em;
   flex-shrink: 0;
 }
 
@@ -365,18 +285,18 @@
   font-family: var(--serif);
   font-size: 1rem;
   font-weight: 400;
-  color: var(--gris-claro);
+  color: var(--gray-4);
   flex: 1;
-  transition: color 0.22s var(--ease);
+  transition: color 0.22s;
 }
-.other-card:hover .other-card__title { color: var(--blanco); }
+.other-card:hover .other-card__title { color: var(--white); }
 
 .other-card svg {
-  color: var(--gris-oscuro);
+  color: var(--gray-1);
   flex-shrink: 0;
-  transition: transform 0.22s var(--ease), color 0.22s var(--ease);
+  transition: transform 0.22s, color 0.22s;
 }
-.other-card:hover svg { color: var(--gris-claro); }
+.other-card:hover svg { color: var(--gray-4); }
 
 /* =============================================
    RESPONSIVE
@@ -411,6 +331,6 @@
 }
 
 @media (max-width: 480px) {
-  .page-hero__title { font-size: 2.5rem; }
+  .page-hero__title { font-size: 3rem; }
   .page-hero__pills { display: none; }
 }
