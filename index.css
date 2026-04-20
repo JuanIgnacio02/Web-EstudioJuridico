@@ -274,56 +274,72 @@
 .lp-more--dark { color: var(--gray-2); }
 .lp-more--dark:hover { color: var(--black); }
 
-/* Visual card */
+/* Visual tipográfico — sin caja, puro texto premium */
 .lp-visual {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .lp-card {
   width: 100%;
-  max-width: 320px;
-  border-radius: 16px;
-  padding: 44px 36px;
+  max-width: 360px;
+  padding: 0 0 0 32px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: transform 0.3s var(--ease);
-}
-.lp-card:hover { transform: translateY(-6px); }
-
-.lp-card--dark {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.lp-card--beige {
-  background: transparent;
+  gap: 14px;
+  background: none;
   border: none;
+  border-radius: 0;
+  border-left: 1px solid rgba(255,255,255,0.15);
+  transition: border-color 0.3s var(--ease);
 }
-.lp-card--white {
-  background: var(--white);
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+.lp-card:hover { transform: none; border-left-color: rgba(255,255,255,0.35); }
+
+/* en secciones claras, la línea es oscura */
+.lp-section--light  .lp-card,
+.lp-section--beige  .lp-card {
+  border-left-color: rgba(0,0,0,0.15);
 }
+.lp-section--light  .lp-card:hover,
+.lp-section--beige  .lp-card:hover {
+  border-left-color: rgba(0,0,0,0.4);
+}
+
+/* quitar variantes antiguas */
+.lp-card--dark,
+.lp-card--beige,
+.lp-card--white { background: none; border-radius: 0; box-shadow: none; }
 
 .lp-card__label {
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gray-2);
 }
-.lp-card__label--dark { color: var(--gray-1); }
+
+/* colores por sección */
+.lp-section--light .lp-card__label,
+.lp-section--beige .lp-card__label { color: var(--gray-1); }
 
 .lp-card__value {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 400;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
   color: var(--white);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
-.lp-card__value--dark { color: var(--black); }
+
+.lp-section--light .lp-card__value,
+.lp-section--beige .lp-card__value { color: var(--black); }
+
+/* quitar overrides de color antiguas que ya no aplican */
+.lp-card__label--dark,
+.lp-card__value--dark { color: inherit; }
 
 /* =============================================
    SECCIÓN DIFERENCIAL
