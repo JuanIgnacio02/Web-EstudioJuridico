@@ -131,11 +131,11 @@ button { cursor: pointer; }
   line-height: 1.2;
 }
 .navbar__logo-name {
-  font-family: var(--serif);
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--white);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
 }
 .navbar__logo-role {
   font-size: 0.65rem;
