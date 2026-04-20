@@ -1,50 +1,41 @@
 /* =============================================
-   ESTUDIO JURÍDICO PÉREZ — Shared Styles v3
-   Palette: black · white · gray · beige
+   ESTUDIO JURÍDICO PÉREZ — Shared Styles v4
+   Brand Kit: Cormorant Garamond + DM Sans
+   Warm palette: negro · beige · blanco
    ============================================= */
 
 /* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Blacks */
-  --black:      #090909;
-  --dark:       #111111;
-  --dark-2:     #1a1a1a;
-
-  /* Grays */
-  --gray-1:     #3a3a3a;
-  --gray-2:     #6a6a6a;
-  --gray-3:     #a8a8a8;
-  --gray-4:     #d4d4d4;
-
-  /* Beige / Warm whites */
-  --beige:      #ede8e1;
-  --beige-2:    #e2dbd2;
-  --off-white:  #f6f4f1;
-  --white:      #ffffff;
-
-  /* Green WhatsApp */
-  --green: #25D366;
+  /* Brand palette */
+  --negro:       #0e0e0c;
+  --gris-oscuro: #3a3a38;
+  --gris:        #888884;
+  --gris-claro:  #c8c8c4;
+  --beige:       #e8e2d8;
+  --beige-claro: #f2ede6;
+  --blanco:      #faf9f7;
+  --green:       #25D366;
 
   /* Type */
-  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --sans:  'Inter', system-ui, -apple-system, sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:  'DM Sans', system-ui, -apple-system, sans-serif;
 
-  /* Misc */
-  --ease:   cubic-bezier(0.4, 0, 0.2, 1);
+  /* Easing */
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --radius: 4px;
-  --radius-lg: 12px;
 }
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--sans);
-  background: var(--black);
-  color: var(--white);
-  line-height: 1.65;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.75;
+  background: var(--negro);
+  color: var(--blanco);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -72,7 +63,7 @@ button { cursor: pointer; }
 .reveal,
 .reveal--left {
   opacity: 0;
-  visibility: hidden;  /* matches GSAP autoAlpha:0 behaviour */
+  visibility: hidden;
 }
 /* No-JS fallback: make everything visible */
 .no-js .reveal,
@@ -90,14 +81,14 @@ button { cursor: pointer; }
   top: 0; left: 0; right: 0;
   z-index: 200;
   padding: 18px 0;
-  transition: background 0.3s var(--ease), padding 0.3s var(--ease);
+  transition: background 0.3s var(--ease), padding 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .navbar.scrolled {
-  background: rgba(9,9,9,0.95);
+  background: rgba(250,249,247,0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(14,14,12,0.08);
 }
 
 .navbar__inner {
@@ -132,18 +123,25 @@ button { cursor: pointer; }
 }
 .navbar__logo-name {
   font-family: var(--serif);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--blanco);
   letter-spacing: 0.01em;
+  transition: color 0.3s var(--ease);
 }
 .navbar__logo-role {
-  font-size: 0.65rem;
+  font-family: var(--sans);
+  font-size: 0.6rem;
   font-weight: 400;
-  color: var(--gray-3);
-  letter-spacing: 0.1em;
+  color: var(--gris);
+  letter-spacing: 2.5px;
   text-transform: uppercase;
+  transition: color 0.3s var(--ease);
 }
+
+/* When scrolled — darken logo text */
+.navbar.scrolled .navbar__logo-name { color: var(--negro); }
+.navbar.scrolled .navbar__logo-role { color: var(--gris-oscuro); }
 
 /* Links */
 .navbar__links {
@@ -152,11 +150,13 @@ button { cursor: pointer; }
   gap: 24px;
 }
 .navbar__links a {
-  font-size: 0.82rem;
+  font-family: var(--sans);
+  font-size: 11px;
   font-weight: 400;
-  color: var(--gray-3);
-  letter-spacing: 0.02em;
-  transition: color 0.25s;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+  transition: color 0.25s var(--ease);
   position: relative;
   white-space: nowrap;
 }
@@ -165,15 +165,23 @@ button { cursor: pointer; }
   position: absolute;
   bottom: -3px; left: 0; right: 0;
   height: 1px;
-  background: var(--white);
+  background: currentColor;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s var(--ease);
 }
 .navbar__links a:hover,
-.navbar__links a.active { color: var(--white); }
+.navbar__links a.active { color: var(--blanco); }
 .navbar__links a:hover::after,
 .navbar__links a.active::after { transform: scaleX(1); }
+
+/* When scrolled — darken nav links */
+.navbar.scrolled .navbar__links a { color: var(--gris-oscuro); }
+.navbar.scrolled .navbar__links a:hover,
+.navbar.scrolled .navbar__links a.active { color: var(--negro); }
+
+/* Burger spans color on scroll */
+.navbar.scrolled .navbar__burger span { background: var(--negro); }
 
 .nav-cta {
   display: flex;
@@ -182,10 +190,11 @@ button { cursor: pointer; }
   padding: 9px 20px;
   background: var(--green);
   border-radius: 50px;
-  font-size: 0.78rem !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
-  color: var(--white) !important;
-  letter-spacing: 0.01em !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--blanco) !important;
   white-space: nowrap;
   transition: opacity 0.25s !important;
 }
@@ -205,8 +214,8 @@ button { cursor: pointer; }
 .navbar__burger span {
   display: block;
   width: 22px; height: 1.5px;
-  background: var(--white);
-  transition: transform 0.3s var(--ease), opacity 0.3s;
+  background: var(--blanco);
+  transition: transform 0.3s var(--ease), opacity 0.3s, background 0.3s var(--ease);
 }
 .navbar__burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .navbar__burger.open span:nth-child(2) { opacity: 0; }
@@ -223,41 +232,36 @@ button { cursor: pointer; }
   border: none;
   cursor: pointer;
   font-family: var(--sans);
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 0;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
 
 .btn--wa {
-  padding: 15px 32px;
   background: var(--green);
-  color: var(--white);
-  border-radius: 50px;
-  font-size: 0.88rem;
+  color: var(--blanco);
   box-shadow: 0 4px 20px rgba(37,211,102,0.25);
 }
 .btn--wa:hover { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
 
 .btn--outline-w {
-  padding: 14px 28px;
   background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 50px;
-  font-size: 0.85rem;
+  color: var(--blanco);
+  border: 1px solid rgba(255,255,255,0.3);
 }
-.btn--outline-w:hover { border-color: var(--white); }
+.btn--outline-w:hover { border-color: var(--blanco); }
 
 .btn--dark {
-  padding: 15px 32px;
-  background: var(--black);
-  color: var(--white);
-  border-radius: 50px;
-  font-size: 0.88rem;
+  background: var(--negro);
+  color: var(--blanco);
 }
-.btn--dark:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.4); }
+.btn--dark:hover { box-shadow: 0 8px 28px rgba(14,14,12,0.3); }
 
 /* =============================================
    WHATSAPP FLOTANTE
@@ -291,8 +295,8 @@ button { cursor: pointer; }
    ============================================= */
 
 .footer {
-  background: var(--dark);
-  border-top: 1px solid rgba(255,255,255,0.05);
+  background: var(--negro);
+  border-top: 1px solid rgba(255,255,255,0.06);
   padding: 52px 0 36px;
 }
 
@@ -317,34 +321,42 @@ button { cursor: pointer; }
 .footer__brand-name {
   font-family: var(--serif);
   font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--white);
+  font-weight: 500;
+  color: var(--blanco);
   line-height: 1.2;
 }
 .footer__brand-role {
-  font-size: 0.72rem;
-  color: var(--gray-3);
-  letter-spacing: 0.08em;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gris);
+  letter-spacing: 2.5px;
   text-transform: uppercase;
 }
 
 .footer__matricula {
-  font-size: 0.68rem;
-  color: var(--gray-2);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gris-oscuro);
   letter-spacing: 0.04em;
   margin-bottom: 10px;
 }
 
 .footer__disclaimer {
-  font-size: 0.72rem;
-  color: var(--gray-2);
-  line-height: 1.65;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gris-oscuro);
+  line-height: 1.75;
   max-width: 420px;
   margin-bottom: 12px;
 }
 .footer__copy {
-  font-size: 0.68rem;
-  color: var(--gray-1);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--gris-oscuro);
 }
 
 .footer__links {
@@ -354,48 +366,55 @@ button { cursor: pointer; }
   align-items: flex-end;
 }
 .footer__links a {
-  font-size: 0.8rem;
-  color: var(--gray-3);
-  transition: color 0.2s;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gris);
+  transition: color 0.2s var(--ease);
 }
-.footer__links a:hover { color: var(--white); }
+.footer__links a:hover { color: var(--blanco); }
 
 .footer__instagram {
   display: flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.78rem;
-  color: var(--gray-3);
-  transition: color 0.2s;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gris);
+  transition: color 0.2s var(--ease);
   border-top: 1px solid rgba(255,255,255,0.06);
   padding-top: 12px;
   margin-top: 4px;
 }
-.footer__instagram:hover { color: var(--white); }
+.footer__instagram:hover { color: var(--blanco); }
 
 /* =============================================
    SECTION SHARED
    ============================================= */
 
 .section { padding: 100px 0; }
-.section--dark   { background: var(--dark); }
-.section--dark-2 { background: var(--dark-2); }
-.section--beige  { background: var(--beige); color: var(--black); }
-.section--off    { background: var(--off-white); color: var(--black); }
-.section--black  { background: var(--black); }
+.section--dark   { background: var(--negro); }
+.section--dark-2 { background: var(--gris-oscuro); }
+.section--beige  { background: var(--beige); color: var(--negro); }
+.section--off    { background: var(--beige-claro); color: var(--negro); }
+.section--black  { background: var(--negro); }
 
 .section__label {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--gray-2);
+  color: var(--gris);
   margin-bottom: 20px;
 }
-.section__label--light { color: var(--gray-3); }
+.section__label--light { color: var(--gris-claro); }
 .section__label::before {
   content: '';
   display: block;
@@ -412,7 +431,7 @@ button { cursor: pointer; }
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(9,9,9,0.97);
+    background: rgba(14,14,12,0.97);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
@@ -428,8 +447,13 @@ button { cursor: pointer; }
     from { opacity: 0; }
     to   { opacity: 1; }
   }
-  .navbar__links a { font-size: 1.1rem; }
-  .nav-cta { padding: 13px 36px !important; font-size: 0.9rem !important; }
+  /* Reset scrolled color inside open mobile menu */
+  .navbar.scrolled .navbar__links a { color: var(--gris-claro); }
+  .navbar.scrolled .navbar__links a:hover,
+  .navbar.scrolled .navbar__links a.active { color: var(--blanco); }
+
+  .navbar__links a { font-size: 14px; letter-spacing: 2px; }
+  .nav-cta { padding: 13px 36px !important; font-size: 12px !important; }
   .navbar__burger { display: flex; }
 
   .footer__inner { grid-template-columns: 1fr; }
@@ -448,4 +472,4 @@ button { cursor: pointer; }
   /* GSAP animations.js handles .reveal visibility for prefers-reduced-motion
      via gsap.matchMedia() — no CSS override needed here. */
 }
-:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }

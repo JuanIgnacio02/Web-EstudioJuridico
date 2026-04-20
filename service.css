@@ -1,5 +1,6 @@
 /* =============================================
-   SERVICE PAGES — Shared Styles
+   SERVICE PAGES — Shared Styles v4
+   Brand Kit: Cormorant Garamond + DM Sans
    ============================================= */
 
 /* ---- PAGE HERO ---- */
@@ -9,12 +10,11 @@
   display: flex;
   align-items: center;
 }
-.page-hero--dark    { background: var(--black); }
+.page-hero--dark    { background: var(--negro); }
 .page-hero--beige   { background: var(--beige); }
-.page-hero--off     { background: var(--off-white); }
+.page-hero--off     { background: var(--beige-claro); }
 
 .page-hero__inner { width: 100%; }
-
 .page-hero__content { max-width: 640px; }
 
 /* Back link */
@@ -22,48 +22,69 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 0.75rem;
-  color: var(--gray-2);
-  letter-spacing: 0.04em;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gris);
   margin-bottom: 36px;
-  transition: color 0.22s, gap 0.22s;
+  transition: color 0.22s var(--ease), gap 0.22s var(--ease);
 }
-.back-link:hover { color: var(--white); gap: 10px; }
-.back-link--dark { color: var(--gray-1); }
-.back-link--dark:hover { color: var(--black); }
+.back-link:hover { color: var(--blanco); gap: 10px; }
+.back-link--dark { color: var(--gris-oscuro); }
+.back-link--dark:hover { color: var(--negro); }
 
 /* Page number */
 .page-num {
   font-family: var(--serif);
-  font-size: 0.68rem;
-  letter-spacing: 0.14em;
-  color: var(--gray-1);
-  margin-bottom: 14px;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--beige);
+  margin-bottom: 8px;
+  line-height: 1;
+  display: block;
+  pointer-events: none;
+  user-select: none;
 }
-.page-num--dark { color: var(--gray-2); }
+/* On light hero bgs */
+.page-hero--beige .page-num,
+.page-hero--off .page-num {
+  color: var(--gris-claro);
+}
+.page-num--dark { color: var(--gris-claro); }
 
-/* Page title */
+/* Page title — H1 scale */
 .page-hero__title {
   font-family: var(--serif);
-  font-size: clamp(3.5rem, 9vw, 6.5rem);
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
   font-weight: 400;
-  line-height: 0.96;
-  color: var(--white);
-  letter-spacing: -0.03em;
+  line-height: 1.0;
+  color: var(--blanco);
+  letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.page-hero__title--dark { color: var(--black); }
+.page-hero--beige .page-hero__title,
+.page-hero--off .page-hero__title {
+  color: var(--negro);
+}
+.page-hero__title--dark { color: var(--negro); }
 
 /* Lead text */
 .page-hero__lead {
-  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-family: var(--sans);
+  font-size: 15px;
   font-weight: 300;
-  color: var(--gray-2);
-  line-height: 1.8;
+  color: var(--gris);
+  line-height: 1.75;
   margin-bottom: 28px;
   max-width: 520px;
 }
-.page-hero__lead--dark { color: var(--gray-1); }
+.page-hero--beige .page-hero__lead,
+.page-hero--off .page-hero__lead {
+  color: var(--gris-oscuro);
+}
+.page-hero__lead--dark { color: var(--gris-oscuro); }
 
 /* Pills */
 .page-hero__pills {
@@ -74,15 +95,23 @@
 }
 .page-hero__pills span {
   padding: 5px 14px;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 50px;
-  font-size: 0.7rem;
-  color: var(--gray-3);
-  letter-spacing: 0.03em;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gris-claro);
+}
+.page-hero--beige .page-hero__pills span,
+.page-hero--off .page-hero__pills span {
+  border-color: var(--gris-claro);
+  color: var(--gris-oscuro);
 }
 .page-hero__pills--dark span {
-  border-color: rgba(0,0,0,0.15);
-  color: var(--gray-1);
+  border-color: var(--gris-claro);
+  color: var(--gris-oscuro);
 }
 
 /* ---- SUB-CARDS GRID ---- */
@@ -90,45 +119,79 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 12px;
+  background: var(--beige);
+  border: 1px solid var(--beige);
+  border-radius: 0;
   overflow: hidden;
   margin-top: 40px;
 }
 
-.sub-card {
-  background: var(--dark);
-  padding: 40px 36px;
-  transition: background 0.25s;
+/* On dark section backgrounds */
+.section--dark .sub-grid,
+.section--dark-2 .sub-grid {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.06);
 }
-.sub-card:hover { background: var(--dark-2); }
+
+.sub-card {
+  background: var(--negro);
+  padding: 40px 36px;
+  transition: background 0.25s var(--ease);
+}
+.sub-card:hover { background: var(--gris-oscuro); }
+
+/* On light section backgrounds */
+.section--off .sub-card,
+.section--beige .sub-card {
+  background: var(--blanco);
+}
+.section--off .sub-card:hover,
+.section--beige .sub-card:hover {
+  background: var(--beige-claro);
+}
 
 .sub-card__num {
   font-family: var(--serif);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  color: var(--gray-1);
-  margin-bottom: 20px;
-  opacity: 0.6;
+  font-size: 56px;
+  font-weight: 300;
+  color: var(--beige);
+  margin-bottom: 12px;
+  opacity: 0.5;
+  line-height: 1;
+  display: block;
+  user-select: none;
+}
+/* Num on light cards */
+.section--off .sub-card__num,
+.section--beige .sub-card__num {
+  color: var(--gris-claro);
 }
 
 .sub-card__title {
   font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--white);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--blanco);
   letter-spacing: -0.01em;
   margin-bottom: 14px;
   line-height: 1.25;
 }
+.section--off .sub-card__title,
+.section--beige .sub-card__title {
+  color: var(--negro);
+}
 
 .sub-card__text {
-  font-size: 0.84rem;
+  font-family: var(--sans);
+  font-size: 14px;
   font-weight: 300;
-  color: var(--gray-2);
+  color: var(--gris);
   line-height: 1.75;
   margin-bottom: 20px;
+}
+.section--off .sub-card__text,
+.section--beige .sub-card__text {
+  color: var(--gris-oscuro);
 }
 
 .sub-card__list {
@@ -138,26 +201,32 @@
   gap: 7px;
 }
 .sub-card__list li {
-  font-size: 0.78rem;
-  color: var(--gray-2);
-  padding-left: 14px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--gris);
+  padding-left: 16px;
   position: relative;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 .sub-card__list li::before {
   content: '—';
   position: absolute;
   left: 0;
-  color: var(--gray-1);
+  color: var(--gris-oscuro);
   font-size: 0.65rem;
+}
+.section--off .sub-card__list li,
+.section--beige .sub-card__list li {
+  color: var(--gris-oscuro);
 }
 
 /* ---- PROCESO (STEPS) ---- */
 .process-title {
   font-family: var(--serif);
-  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
   font-weight: 400;
-  color: var(--black);
+  color: var(--negro);
   letter-spacing: -0.02em;
   margin-bottom: 52px;
   margin-top: 8px;
@@ -177,14 +246,14 @@
 
 .step__num {
   width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--black);
-  color: var(--white);
+  border-radius: 0;
+  background: var(--negro);
+  color: var(--blanco);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 20px;
   flex-shrink: 0;
@@ -192,22 +261,23 @@
 
 .step__title {
   font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--negro);
   margin-bottom: 10px;
   line-height: 1.3;
 }
 
 .step__text {
-  font-size: 0.84rem;
+  font-family: var(--sans);
+  font-size: 14px;
   font-weight: 300;
-  color: var(--gray-1);
+  color: var(--gris-oscuro);
   line-height: 1.75;
 }
 
 .step__arrow {
-  color: var(--gray-4);
+  color: var(--gris-claro);
   padding: 0 8px;
   margin-top: 10px;
   flex-shrink: 0;
@@ -230,19 +300,20 @@
 
 .cta-title {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
   font-weight: 400;
-  color: var(--white);
+  color: var(--blanco);
   letter-spacing: -0.02em;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
 .cta-sub {
-  font-size: 0.88rem;
+  font-family: var(--sans);
+  font-size: 15px;
   font-weight: 300;
-  color: var(--gray-2);
-  line-height: 1.6;
+  color: var(--gris);
+  line-height: 1.75;
 }
 
 /* ---- OTRAS ÁREAS ---- */
@@ -252,11 +323,18 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
+  background: var(--beige);
+  border: 1px solid var(--beige);
+  border-radius: 0;
   overflow: hidden;
   margin-top: 28px;
+}
+
+/* On dark section bg */
+.section--dark-2 .other-grid,
+.section--dark .other-grid {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.05);
 }
 
 .other-card {
@@ -264,20 +342,22 @@
   align-items: center;
   gap: 16px;
   padding: 24px 28px;
-  background: var(--dark-2);
-  transition: background 0.22s, padding 0.22s;
+  background: var(--negro);
+  transition: background 0.22s var(--ease), padding 0.22s var(--ease);
 }
 .other-card:hover {
-  background: rgba(255,255,255,0.04);
+  background: var(--gris-oscuro);
   padding-left: 36px;
 }
 .other-card:hover svg { transform: translateX(4px); }
 
 .other-card__num {
   font-family: var(--serif);
-  font-size: 0.65rem;
-  color: var(--gray-1);
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--gris);
+  letter-spacing: 1px;
+  text-transform: uppercase;
   flex-shrink: 0;
 }
 
@@ -285,18 +365,18 @@
   font-family: var(--serif);
   font-size: 1rem;
   font-weight: 400;
-  color: var(--gray-4);
+  color: var(--gris-claro);
   flex: 1;
-  transition: color 0.22s;
+  transition: color 0.22s var(--ease);
 }
-.other-card:hover .other-card__title { color: var(--white); }
+.other-card:hover .other-card__title { color: var(--blanco); }
 
 .other-card svg {
-  color: var(--gray-1);
+  color: var(--gris-oscuro);
   flex-shrink: 0;
-  transition: transform 0.22s, color 0.22s;
+  transition: transform 0.22s var(--ease), color 0.22s var(--ease);
 }
-.other-card:hover svg { color: var(--gray-4); }
+.other-card:hover svg { color: var(--gris-claro); }
 
 /* =============================================
    RESPONSIVE
@@ -331,6 +411,6 @@
 }
 
 @media (max-width: 480px) {
-  .page-hero__title { font-size: 3rem; }
+  .page-hero__title { font-size: 2.5rem; }
   .page-hero__pills { display: none; }
 }

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Kit — Estudio Jurídico Pérez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --negro:       #0e0e0c;
+    --gris-oscuro: #3a3a38;
+    --gris:        #888884;
+    --gris-claro:  #c8c8c4;
+    --beige:       #e8e2d8;
+    --beige-claro: #f2ede6;
+    --blanco:      #faf9f7;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', Helvetica, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--blanco);
+    color: var(--negro);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .page { max-width: 1080px; margin: 0 auto; padding: 64px 48px 120px; }
+
+  /* ─── Cover ─── */
+  .cover {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    border-bottom: 1px solid var(--negro);
+    padding-bottom: 40px;
+    margin-bottom: 80px;
+  }
+  .cover h1 {
+    font-family: var(--font-display);
+    font-size: 58px; font-weight: 300; line-height: 1.0;
+    letter-spacing: -1px;
+  }
+  .cover h1 em { font-style: italic; color: var(--gris-oscuro); }
+  .cover-meta {
+    text-align: right;
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gris); line-height: 2;
+  }
+
+  /* ─── Section ─── */
+  section { margin-bottom: 80px; }
+  .section-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gris); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--beige); }
+
+  /* ─── Logo ─── */
+  .logo-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--beige); }
+  .logo-cell {
+    padding: 56px 32px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+    border-right: 1px solid var(--beige);
+  }
+  .logo-cell:last-child { border-right: none; }
+  .logo-cell.dark  { background: var(--negro); }
+  .logo-cell.beige { background: var(--beige); }
+
+  .mark {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 24px; font-weight: 300;
+  }
+  .mark.light { border: 1px solid var(--negro); color: var(--negro); }
+  .mark.inv   { border: 1px solid rgba(255,255,255,0.4); color: white; }
+  .mark.beige-mark { border: 1px solid var(--gris-oscuro); color: var(--gris-oscuro); }
+
+  .logo-wordmark { text-align: center; }
+  .logo-wordmark .wm-name { font-family: var(--font-display); font-size: 20px; font-weight: 400; display: block; }
+  .logo-wordmark .wm-name em { font-style: italic; }
+  .logo-wordmark .wm-sub {
+    font-family: var(--font-body); font-size: 10px;
+    letter-spacing: 2px; text-transform: uppercase;
+    display: block; margin-top: 4px;
+  }
+  .logo-cell.dark .wm-name { color: var(--blanco); }
+  .logo-cell.dark .wm-sub  { color: var(--gris); }
+  .logo-cell.beige .wm-name { color: var(--negro); }
+  .logo-cell.beige .wm-sub  { color: var(--gris-oscuro); }
+  .wm-sub { color: var(--gris); }
+
+  .logo-caption {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .logo-caption.dark  { color: var(--gris); }
+  .logo-caption.light { color: var(--gris); }
+  .logo-caption.beige { color: var(--gris-oscuro); }
+
+  /* ─── Color Palette ─── */
+  .swatches { display: grid; grid-template-columns: repeat(7, 1fr); height: 160px; border: 1px solid var(--beige); overflow: hidden; }
+  .sw {
+    position: relative;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 12px; border-right: 1px solid rgba(0,0,0,0.06);
+  }
+  .sw:last-child { border-right: none; }
+  .sw-name { font-size: 10px; font-weight: 500; display: block; letter-spacing: 0.3px; }
+  .sw-hex  { font-size: 9px; font-family: monospace; opacity: 0.65; display: block; margin-top: 2px; }
+
+  .color-chips { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+  .color-chip-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .chip {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 16px; background: var(--blanco);
+    border: 1px solid var(--beige); min-width: 210px;
+  }
+  .chip-dot { width: 32px; height: 32px; flex-shrink: 0; }
+  .chip-name { font-weight: 500; font-size: 12px; display: block; }
+  .chip-val  { font-family: monospace; font-size: 11px; color: var(--gris); display: block; }
+
+  .usage-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 24px; border: 1px solid var(--beige); }
+  .usage-cell { padding: 24px; border-right: 1px solid var(--beige); }
+  .usage-cell:last-child { border-right: none; }
+  .usage-cell .u-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); margin-bottom: 6px; display: block; }
+  .usage-cell .u-desc  { font-family: var(--font-display); font-size: 18px; font-weight: 300; }
+
+  /* ─── Typography ─── */
+  .type-table { width: 100%; border-collapse: collapse; }
+  .type-table tr { border-top: 1px solid var(--beige); }
+  .type-table td { padding: 24px 0 24px 0; vertical-align: top; }
+  .type-table td:first-child { width: 160px; padding-right: 32px; }
+  .type-meta strong { display: block; font-size: 12px; font-weight: 500; margin-bottom: 4px; }
+  .type-meta span { font-size: 11px; color: var(--gris); line-height: 1.7; display: block; }
+
+  .t-hero  { font-family: var(--font-display); font-size: 54px; font-weight: 300; line-height: 1.0; letter-spacing: -1px; }
+  .t-h1    { font-family: var(--font-display); font-size: 36px; font-weight: 400; }
+  .t-h1i   { font-family: var(--font-display); font-size: 36px; font-weight: 300; font-style: italic; color: var(--gris-oscuro); }
+  .t-h2    { font-family: var(--font-display); font-size: 24px; font-weight: 300; }
+  .t-label { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gris); }
+  .t-body  { font-size: 15px; font-weight: 300; line-height: 1.75; color: var(--gris-oscuro); max-width: 540px; }
+  .t-small { font-size: 12px; color: var(--gris); line-height: 1.6; }
+
+  /* ─── Buttons ─── */
+  .btn-showcase { display: flex; flex-direction: column; gap: 16px; }
+  .btn-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; padding: 28px; border: 1px solid var(--beige); }
+  .btn-row.dark-bg { background: var(--negro); border-color: transparent; }
+  .btn-row.beige-bg { background: var(--beige); border-color: transparent; }
+  .btn-row-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gris); width: 80px; flex-shrink: 0; }
+  .dark-bg .btn-row-label { color: #555; }
+  .beige-bg .btn-row-label { color: var(--gris-oscuro); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--font-body); font-size: 12px;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 13px 28px; cursor: pointer;
+    border: none; text-decoration: none; font-weight: 400;
+    transition: all 0.2s ease;
+  }
+  .btn-solid   { background: var(--negro); color: var(--blanco); }
+  .btn-solid:hover { background: var(--gris-oscuro); }
+  .btn-outline { background: transparent; color: var(--negro); border: 1px solid var(--negro); }
+  .btn-outline:hover { background: var(--negro); color: var(--blanco); }
+  .btn-ghost   { background: transparent; color: var(--gris-oscuro); padding: 13px 4px; }
+  .btn-ghost::after { content: ' →'; }
+  .btn-ghost:hover { color: var(--negro); }
+  .btn-beige   { background: var(--beige); color: var(--negro); }
+  .btn-beige:hover { background: var(--beige-claro); }
+  /* inv buttons */
+  .btn-inv-solid   { background: var(--blanco); color: var(--negro); }
+  .btn-inv-outline { background: transparent; color: var(--blanco); border: 1px solid rgba(255,255,255,0.4); }
+  .btn-inv-outline:hover { background: var(--blanco); color: var(--negro); }
+  .btn-wa {
+    background: #25D366; color: white; gap: 8px;
+  }
+  .btn-wa:hover { background: #1ebe5a; }
+
+  /* ─── Cards ─── */
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--beige); }
+  .card {
+    padding: 32px; border-right: 1px solid var(--beige);
+    position: relative;
+  }
+  .card:last-child { border-right: none; }
+  .card-num {
+    font-family: var(--font-display); font-size: 56px; font-weight: 300;
+    color: var(--beige); line-height: 1; margin-bottom: 16px;
+  }
+  .card h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; margin-bottom: 8px; }
+  .card p  { font-size: 13px; color: var(--gris-oscuro); line-height: 1.65; margin-bottom: 20px; }
+  .card-tag {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 10px; background: var(--beige-claro); color: var(--gris-oscuro);
+  }
+
+  /* ─── Voz ─── */
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .voice-box { padding: 28px; }
+  .voice-box.si  { background: var(--beige-claro); border-left: 2px solid var(--negro); }
+  .voice-box.no  { background: #f5f5f5; border-left: 2px solid var(--gris-claro); }
+  .voice-box h4 { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 16px; }
+  .voice-box.si h4 { color: var(--negro); }
+  .voice-box.no h4 { color: var(--gris); }
+  .voice-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .voice-box ul li { font-size: 13px; line-height: 1.5; color: var(--gris-oscuro); }
+  .voice-box.si ul li::before { content: '— '; color: var(--negro); }
+  .voice-box.no ul li::before { content: '✕  '; color: var(--gris-claro); }
+
+  .phrases { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+  .phrase {
+    padding: 20px 28px; border: 1px solid var(--beige);
+    font-family: var(--font-display); font-size: 22px;
+    font-weight: 300; font-style: italic; color: var(--gris-oscuro);
+    background: var(--blanco);
+  }
+
+  /* ─── Spacing ─── */
+  .spacing-row { display: flex; gap: 24px; align-items: flex-end; }
+  .sp-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .sp-bar  { background: var(--negro); width: 28px; }
+  .sp-val  { font-size: 11px; font-family: monospace; color: var(--gris); }
+  .sp-name { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--gris-claro); }
+
+  /* ─── Footer ─── */
+  .kit-footer {
+    border-top: 1px solid var(--negro);
+    padding-top: 32px; margin-top: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .kit-footer .left { font-size: 12px; line-height: 1.8; }
+  .kit-footer .left strong { font-weight: 500; }
+  .kit-footer .right { text-align: right; font-size: 11px; color: var(--gris); letter-spacing: 0.5px; line-height: 1.8; }
+
+  /* ─── Tweaks ─── */
+  #tweaks-panel {
+    display: none; position: fixed; bottom: 24px; right: 24px;
+    background: var(--blanco); border: 1px solid var(--beige);
+    padding: 20px; width: 230px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08); z-index: 999;
+    font-family: var(--font-body); font-size: 12px;
+  }
+  #tweaks-panel h3 { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 14px; color: var(--gris); }
+  .tw-row { margin-bottom: 12px; }
+  .tw-row label { display: block; margin-bottom: 4px; color: var(--gris-oscuro); font-size: 11px; }
+  .tw-row select { width: 100%; padding: 6px; border: 1px solid var(--beige); background: white; font-family: var(--font-body); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div>
+      <h1>Brand Kit<br><em>Estudio Jurídico Pérez</em></h1>
+      <p style="margin-top:12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gris)">San Rafael · Mendoza · 2026</p>
+    </div>
+    <div class="cover-meta">
+      Gimena Pérez<br>
+      Abogada<br>
+      Versión 1.0
+    </div>
+  </div>
+
+  <!-- LOGO -->
+  <section>
+    <div class="section-label">01 — Logotipo</div>
+    <div class="logo-row">
+      <div class="logo-cell">
+        <div class="mark light">GP</div>
+        <div class="logo-wordmark">
+          <span class="wm-name">Gimena <em>Pérez</em></span>
+          <span class="wm-sub" style="color:var(--gris)">Estudio Jurídico · Mendoza</span>
+        </div>
+        <span class="logo-caption light">Versión principal</span>
+      </div>
+      <div class="logo-cell dark">
+        <div class="mark inv">GP</div>
+        <div class="logo-wordmark">
+          <span class="wm-name">Gimena <em>Pérez</em></span>
+          <span class="wm-sub">Estudio Jurídico · Mendoza</span>
+        </div>
+        <span class="logo-caption dark">Versión inversa</span>
+      </div>
+      <div class="logo-cell beige">
+        <div class="mark beige-mark">GP</div>
+        <div class="logo-wordmark">
+          <span class="wm-name">Gimena <em>Pérez</em></span>
+          <span class="wm-sub">Estudio Jurídico · Mendoza</span>
+        </div>
+        <span class="logo-caption beige">Versión beige</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORES -->
+  <section>
+    <div class="section-label">02 — Paleta de colores</div>
+    <div class="swatches">
+      <div class="sw" style="background:#0e0e0c">
+        <span class="sw-name" style="color:#888">Negro</span>
+        <span class="sw-hex" style="color:#555">#0e0e0c</span>
+      </div>
+      <div class="sw" style="background:#3a3a38">
+        <span class="sw-name" style="color:#aaa">Gris Oscuro</span>
+        <span class="sw-hex" style="color:#777">#3a3a38</span>
+      </div>
+      <div class="sw" style="background:#888884">
+        <span class="sw-name" style="color:#ddd">Gris</span>
+        <span class="sw-hex" style="color:#bbb">#888884</span>
+      </div>
+      <div class="sw" style="background:#c8c8c4">
+        <span class="sw-name">Gris Claro</span>
+        <span class="sw-hex">#c8c8c4</span>
+      </div>
+      <div class="sw" style="background:#e8e2d8">
+        <span class="sw-name">Beige</span>
+        <span class="sw-hex">#e8e2d8</span>
+      </div>
+      <div class="sw" style="background:#f2ede6">
+        <span class="sw-name">Beige Claro</span>
+        <span class="sw-hex">#f2ede6</span>
+      </div>
+      <div class="sw" style="background:#faf9f7; border-left:1px solid #e8e2d8">
+        <span class="sw-name">Blanco</span>
+        <span class="sw-hex">#faf9f7</span>
+      </div>
+    </div>
+
+    <div class="usage-row">
+      <div class="usage-cell" style="background:#0e0e0c">
+        <span class="u-label" style="color:#555">Primario</span>
+        <span class="u-desc" style="color:#faf9f7">Negro · Autoridad y peso visual</span>
+      </div>
+      <div class="usage-cell" style="background:#888884">
+        <span class="u-label" style="color:#ddd">Secundario</span>
+        <span class="u-desc" style="color:#faf9f7">Gris · Subtítulos y apoyo</span>
+      </div>
+      <div class="usage-cell" style="background:#e8e2d8">
+        <span class="u-label" style="color:#888">Base cálida</span>
+        <span class="u-desc" style="color:#3a3a38">Beige · Fondos y superficies</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPOGRAFÍA -->
+  <section>
+    <div class="section-label">03 — Tipografía</div>
+    <table class="type-table">
+      <tr>
+        <td class="type-meta"><strong>Hero / Display</strong><span>Cormorant Garamond<br>Light 300<br>54px / −1px</span></td>
+        <td><div class="t-hero">Justicia clara,<br><em style="color:var(--gris-oscuro)">resultados reales.</em></div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Título H1</strong><span>Cormorant Garamond<br>Regular 400<br>36px</span></td>
+        <td><div class="t-h1">Accidentes Laborales</div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Título Itálico</strong><span>Cormorant Garamond<br>Light Italic<br>36px · gris oscuro</span></td>
+        <td><div class="t-h1i">Más de 10 años de experiencia</div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Subtítulo H2</strong><span>Cormorant Garamond<br>Light 300<br>24px</span></td>
+        <td><div class="t-h2">Procesos claros, sin intermediarios</div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Etiqueta</strong><span>DM Sans<br>Regular · uppercase<br>11px / 2.5px</span></td>
+        <td><div class="t-label">Matrícula SCJM Mendoza N.º 8988</div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Cuerpo</strong><span>DM Sans<br>Light 300<br>15px / 1.75</span></td>
+        <td><div class="t-body">Cuando me contratás, hablás conmigo directamente — sin secretarias, sin intermediarios, sin rodeos. Ese es mi diferencial como abogada.</div></td>
+      </tr>
+      <tr>
+        <td class="type-meta"><strong>Legal / Pequeño</strong><span>DM Sans<br>Regular<br>12px</span></td>
+        <td><div class="t-small">La información de este sitio es de carácter informativo y no constituye asesoramiento legal. Consultá directamente para analizar tu caso.</div></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- BOTONES -->
+  <section>
+    <div class="section-label">04 — Botones y CTAs</div>
+    <div class="btn-showcase">
+      <div class="btn-row">
+        <span class="btn-row-label">Claro</span>
+        <a class="btn btn-solid" href="#">Consultá tu caso</a>
+        <a class="btn btn-outline" href="#">Ver más información</a>
+        <a class="btn btn-ghost" href="#">Todos los servicios</a>
+        <a class="btn btn-beige" href="#">Descargar guía</a>
+      </div>
+      <div class="btn-row dark-bg">
+        <span class="btn-row-label">Oscuro</span>
+        <a class="btn btn-inv-solid" href="#">Consultá tu caso</a>
+        <a class="btn btn-inv-outline" href="#">Ver más información</a>
+        <a class="btn btn-ghost" style="color:#888" href="#">Todos los servicios</a>
+      </div>
+      <div class="btn-row beige-bg">
+        <span class="btn-row-label">Beige</span>
+        <a class="btn btn-solid" href="#">Consultá tu caso</a>
+        <a class="btn btn-outline" href="#">Ver más información</a>
+        <a class="btn btn-wa" href="#">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;align-items:center">
+      <span style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gris);margin-right:4px">Badges:</span>
+      <span style="padding:5px 14px;background:var(--negro);color:var(--blanco);font-size:10px;letter-spacing:1.5px;text-transform:uppercase">Sin costos iniciales</span>
+      <span style="padding:5px 14px;background:var(--beige);color:var(--negro);font-size:10px;letter-spacing:1.5px;text-transform:uppercase">+10 años de experiencia</span>
+      <span style="padding:5px 14px;border:1px solid var(--gris-claro);color:var(--gris-oscuro);font-size:10px;letter-spacing:1.5px;text-transform:uppercase">Atención directa</span>
+      <span style="padding:5px 14px;border:1px solid var(--negro);color:var(--negro);font-size:10px;letter-spacing:1.5px;text-transform:uppercase">Matrícula SCJM</span>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section>
+    <div class="section-label">05 — Tarjetas de servicio</div>
+    <div class="card-grid">
+      <div class="card" style="background:var(--negro)">
+        <div class="card-num" style="color:#2a2a28">01</div>
+        <h3 style="color:var(--blanco)">Accidentes</h3>
+        <p style="color:var(--gris)">Reclamá la indemnización que te corresponde. Accidentes laborales, ART y tránsito.</p>
+        <span class="card-tag" style="background:#1e1e1c;color:var(--gris)">Sin costos iniciales</span>
+      </div>
+      <div class="card" style="background:var(--beige-claro)">
+        <div class="card-num">02</div>
+        <h3>Divorcios</h3>
+        <p style="color:var(--gris-oscuro)">Procesos claros y rápidos. Divorcio express, alimentos y régimen de cuidado.</p>
+        <span class="card-tag">Proceso rápido</span>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>Sucesiones</h3>
+        <p style="color:var(--gris-oscuro)">Acompañamiento completo en el proceso sucesorio. Orden, seguridad y claridad.</p>
+        <span class="card-tag">Trámite completo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOZ Y TONO -->
+  <section>
+    <div class="section-label">06 — Voz y tono</div>
+    <div class="voice-grid">
+      <div class="voice-box si">
+        <h4>Sí usamos</h4>
+        <ul>
+          <li>Tuteo directo ("podés reclamar", "te acompañamos")</li>
+          <li>Frases cortas y sin rodeos</li>
+          <li>Empatía sin condescendencia</li>
+          <li>Palabras simples para conceptos legales</li>
+          <li>Primera persona en comunicación directa</li>
+          <li>Promesas concretas y verificables</li>
+        </ul>
+      </div>
+      <div class="voice-box no">
+        <h4>No usamos</h4>
+        <ul>
+          <li>Jerga legal sin explicación</li>
+          <li>Tono corporativo impersonal</li>
+          <li>Promesas exageradas o garantías absolutas</li>
+          <li>Tecnicismos para impresionar</li>
+          <li>Lenguaje distante o excesivamente formal</li>
+          <li>Anglicismos innecesarios</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phrases">
+      <div class="phrase">"Cuando me contratás, hablás conmigo directamente."</div>
+      <div class="phrase">"Solo cobramos cuando vos cobrás."</div>
+      <div class="phrase">"Más de 10 años resolviendo casos reales en Mendoza."</div>
+    </div>
+  </section>
+
+  <!-- ESPACIADO -->
+  <section>
+    <div class="section-label">07 — Espaciado</div>
+    <p style="font-size:12px;color:var(--gris);margin-bottom:28px">Sistema de 8px. La marca respira — espacios generosos.</p>
+    <div class="spacing-row">
+      <div class="sp-item"><div class="sp-bar" style="height:4px"></div><span class="sp-val">4</span><span class="sp-name">XS</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:8px"></div><span class="sp-val">8</span><span class="sp-name">SM</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:16px"></div><span class="sp-val">16</span><span class="sp-name">MD</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:24px"></div><span class="sp-val">24</span><span class="sp-name">LG</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:32px"></div><span class="sp-val">32</span><span class="sp-name">XL</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:48px"></div><span class="sp-val">48</span><span class="sp-name">2XL</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:64px"></div><span class="sp-val">64</span><span class="sp-name">3XL</span></div>
+      <div class="sp-item"><div class="sp-bar" style="height:80px"></div><span class="sp-val">80</span><span class="sp-name">4XL</span></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="kit-footer">
+    <div class="left">
+      <strong>Estudio Jurídico Pérez</strong> — Brand Kit v1.0<br>
+      <span style="color:var(--gris);font-size:11px">Uso interno y para proveedores autorizados</span>
+    </div>
+    <div class="right">
+      Gimena Pérez · Abogada<br>
+      San Rafael, Mendoza · 2026
+    </div>
+  </div>
+
+</div>
+
+<!-- TWEAKS -->
+<div id="tweaks-panel">
+  <h3>Tweaks</h3>
+  <div class="tw-row">
+    <label>Tipografía display</label>
+    <select onchange="document.documentElement.style.setProperty('--font-display', this.value)">
+      <option value="'Cormorant Garamond', serif">Cormorant Garamond</option>
+      <option value="'Playfair Display', serif">Playfair Display</option>
+      <option value="Georgia, serif">Georgia</option>
+    </select>
+  </div>
+  <div class="tw-row">
+    <label>Tono de fondo</label>
+    <select onchange="applyBg(this.value)">
+      <option value="#faf9f7">Blanco cálido (actual)</option>
+      <option value="#f5f5f3">Blanco neutro</option>
+      <option value="#f2ede6">Beige claro</option>
+      <option value="#ffffff">Blanco puro</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('message', e => {
+    if (e.data?.type === '__activate_edit_mode')   document.getElementById('tweaks-panel').style.display = 'block';
+    if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+  });
+  window.parent.postMessage({type: '__edit_mode_available'}, '*');
+
+  function applyBg(c) {
+    document.documentElement.style.setProperty('--blanco', c);
+    document.body.style.background = c;
+  }
+</script>
+</body>
+</html>

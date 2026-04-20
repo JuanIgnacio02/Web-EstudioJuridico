@@ -5,7 +5,10 @@
       "Bash(git init:*)",
       "Bash(git add:*)",
       "Bash(git commit -m ':*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(powershell -Command '\\(Get-Content '\\\\''__TRACKED_VAR__'\\\\'' -Raw\\) -replace '\\\\''5491100000000'\\\\'', '\\\\''542604689061'\\\\'' | Set-Content '\\\\''__TRACKED_VAR__'\\\\'' -NoNewline -Encoding UTF8')",
+      "Bash(python3 -c ':*)",
+      "Bash(node -e ':*)"
     ]
   }
 }
