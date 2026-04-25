@@ -15,21 +15,27 @@ if (navbar) {
 const burger   = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 
+function closeMenu() {
+  navLinks.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}
+
 if (burger && navLinks) {
   burger.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
     burger.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', open);
   });
 
   navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
   });
 }
 
