@@ -420,40 +420,75 @@ button { cursor: pointer; }
 }
 
 /* =============================================
-   RESPONSIVE
+   MOBILE DRAWER
    ============================================= */
 
-body.menu-open {
-  overflow: hidden !important;
-  touch-action: none;
+/* Overlay backdrop — oculto por defecto, GSAP lo anima */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 190;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
+
+  /* Activar overlay en mobile */
+  .nav-overlay { display: block; }
+
+  /* Drawer panel — right side, GSAP controla visibilidad */
   .navbar__links {
-    display: flex;
     position: fixed;
-    inset: 0;
-    background: rgba(9,9,9,0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: min(340px, 80vw);
+    background: var(--dark);
+    border-left: 1px solid rgba(255,255,255,0.06);
+    z-index: 200;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;
-    z-index: 300;
-    opacity: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 44px 52px;
+    gap: 0;
     visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.28s var(--ease), visibility 0.28s;
+    box-shadow: -24px 0 80px rgba(0,0,0,0.5);
   }
-  .navbar__links.open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+
+  /* Links principales — Cormorant Garamond italic grande */
+  .navbar__links > a:not(.nav-cta) {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: -0.01em;
+    line-height: 1;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    width: 100%;
+    transition: color 0.22s var(--ease);
   }
-  .navbar__links a { font-size: 1.1rem; }
-  .nav-cta { padding: 13px 36px !important; font-size: 0.9rem !important; }
-  .navbar__burger { display: flex; cursor: pointer; }
+  .navbar__links > a:not(.nav-cta):last-of-type { border-bottom: none; }
+  .navbar__links > a:not(.nav-cta):hover { color: var(--white); }
+
+  /* CTA WhatsApp al fondo del drawer */
+  .navbar__links .nav-cta {
+    margin-top: auto;
+    font-size: 0.7rem !important;
+    padding: 13px 28px !important;
+    letter-spacing: 0.1em;
+    width: 100%;
+    justify-content: center;
+    border-radius: 4px !important;
+  }
+
+  .navbar__burger { display: flex; z-index: 201; }
 
   .footer__inner { grid-template-columns: 1fr; }
   .footer__links { align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; }

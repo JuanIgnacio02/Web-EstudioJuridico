@@ -11,32 +11,59 @@ if (navbar) {
   onScroll();
 }
 
-/* ---- BURGER ---- */
-const burger   = document.getElementById('burger');
-const navLinks = document.getElementById('navLinks');
-
-function closeMenu() {
-  navLinks.classList.remove('open');
-  burger.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false');
-  document.body.classList.remove('menu-open');
-}
+/* ---- MOBILE DRAWER (GSAP) ---- */
+const burger     = document.getElementById('burger');
+const navLinks   = document.getElementById('navLinks');
+const navOverlay = document.getElementById('navOverlay');
 
 if (burger && navLinks) {
-  burger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    document.body.classList.toggle('menu-open', open);
-  });
+  let isOpen = false;
 
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', closeMenu);
-  });
+  /* Timeline paused — GSAP controla open/close */
+  const tl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
-  });
+  tl
+    /* backdrop */
+    .fromTo(navOverlay,
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.35, ease: 'power2.out' },
+      0
+    )
+    /* drawer desliza desde la derecha */
+    .fromTo(navLinks,
+      { x: '100%', autoAlpha: 0 },
+      { x: '0%',   autoAlpha: 1, duration: 0.48 },
+      0
+    )
+    /* links entran en cascada */
+    .fromTo(navLinks.querySelectorAll('a'),
+      { x: 28, autoAlpha: 0 },
+      { x: 0,  autoAlpha: 1, stagger: 0.07, duration: 0.38 },
+      0.18
+    );
+
+  const openDrawer = () => {
+    isOpen = true;
+    if (navOverlay) navOverlay.style.pointerEvents = 'auto';
+    burger.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    tl.play();
+  };
+
+  const closeDrawer = () => {
+    isOpen = false;
+    if (navOverlay) navOverlay.style.pointerEvents = 'none';
+    burger.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    tl.reverse();
+  };
+
+  burger.addEventListener('click', () => isOpen ? closeDrawer() : openDrawer());
+  navOverlay?.addEventListener('click', closeDrawer);
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen) closeDrawer(); });
 }
 
 /* ---- SMOOTH SCROLL (index links only) ---- */
