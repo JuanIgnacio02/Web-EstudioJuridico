@@ -420,78 +420,108 @@ button { cursor: pointer; }
 }
 
 /* =============================================
-   MOBILE DRAWER
+   MOBILE MENU — full screen overlay
    ============================================= */
 
-/* Overlay backdrop — oculto por defecto, GSAP lo anima */
-.nav-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 190;
-  pointer-events: none;
+/* El menú es pantalla completa: position fixed inset 0
+   GSAP maneja autoAlpha (opacity + visibility) */
+.nav-menu-mobile {
+  display: none; /* solo en mobile */
 }
 
 @media (max-width: 768px) {
 
-  /* Activar overlay en mobile */
-  .nav-overlay { display: block; }
+  /* Burger visible */
+  .navbar__burger { display: flex; z-index: 300; position: relative; }
 
-  /* Drawer panel — right side, GSAP controla visibilidad */
+  /* Ocultar nav desktop en mobile */
   .navbar__links {
+    display: none !important;
+  }
+
+  /* Menú móvil — pantalla completa */
+  .nav-menu-mobile {
+    display: flex;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;               /* más confiable que height: 100dvh en iOS Safari */
-    width: min(320px, 82vw);
-    background: var(--dark);
-    border-left: 1px solid rgba(255,255,255,0.08);
-    z-index: 200;
+    inset: 0;
+    z-index: 250;
+    background: #0c0c0c;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 48px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Grupo de links */
+  .nav-menu-mobile__links {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 72px 40px 48px;
-    gap: 0;
-    visibility: hidden;
-    overflow-y: auto;
-    box-shadow: -32px 0 80px rgba(0,0,0,0.6);
+    width: 100%;
+    margin-bottom: 48px;
   }
 
-  /* Links principales — Cormorant Garamond italic grande */
-  .navbar__links > a:not(.nav-cta) {
+  .nav-menu-mobile__links a {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
+    font-size: clamp(2.4rem, 11vw, 3.2rem);
     font-weight: 300;
     font-style: italic;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: -0.02em;
     line-height: 1;
-    padding: 16px 0;
+    padding: 14px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     width: 100%;
-    transition: color 0.22s var(--ease);
     display: block;
+    transition: color 0.2s;
+    text-decoration: none;
   }
-  .navbar__links > a:not(.nav-cta):first-child { border-top: 1px solid rgba(255,255,255,0.06); }
-  .navbar__links > a:not(.nav-cta):hover { color: var(--white); }
+  .nav-menu-mobile__links a:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
+  .nav-menu-mobile__links a:hover { color: #fff; }
 
-  /* CTA WhatsApp al fondo del drawer */
-  .navbar__links .nav-cta {
-    margin-top: 40px;
-    font-size: 0.7rem !important;
-    padding: 14px 28px !important;
-    letter-spacing: 0.1em;
-    width: 100%;
-    justify-content: center;
-    border-radius: 4px !important;
+  /* Botón WA */
+  .nav-menu-mobile__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: #fff;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border-radius: 4px;
+    text-decoration: none;
   }
 
-  .navbar__burger { display: flex; z-index: 201; }
+  /* Botón cerrar — X en esquina superior derecha */
+  .nav-menu-mobile__close {
+    position: absolute;
+    top: 22px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .nav-menu-mobile__close span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: rgba(255,255,255,0.6);
+  }
+  .nav-menu-mobile__close span:first-child { transform: translateY(3.25px) rotate(45deg); }
+  .nav-menu-mobile__close span:last-child  { transform: translateY(-3.25px) rotate(-45deg); }
 
+  /* Footer info */
   .footer__inner { grid-template-columns: 1fr; }
   .footer__links { align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; }
   .footer__instagram { border: none; padding: 0; margin: 0; }
