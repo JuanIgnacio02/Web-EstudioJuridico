@@ -14,6 +14,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="index.css" />
+  <style>
+    /* Ocultar nav desktop en mobile — inline para que aplique antes de cualquier JS/CSS externo */
+    @media (max-width: 768px) {
+      #navLinks { display: none !important; visibility: hidden !important; }
+    }
+  </style>
 </head>
 <body>
 
