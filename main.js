@@ -11,9 +11,18 @@ if (navbar) {
   onScroll();
 }
 
+/* ---- OCULTAR NAV DESKTOP EN MOBILE (forzado via JS) ---- */
+const navLinksDesktop = document.getElementById('navLinks');
+function syncNavVisibility() {
+  if (!navLinksDesktop) return;
+  navLinksDesktop.style.display = window.innerWidth <= 768 ? 'none' : '';
+}
+syncNavVisibility();
+window.addEventListener('resize', syncNavVisibility, { passive: true });
+
 /* ---- MOBILE MENU (GSAP) ---- */
-const burger     = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
+const burger      = document.getElementById('burger');
+const mobileMenu  = document.getElementById('mobileMenu');
 const mobileClose = document.getElementById('mobileClose');
 
 if (burger && mobileMenu) {

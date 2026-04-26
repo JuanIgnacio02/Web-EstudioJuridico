@@ -426,7 +426,10 @@ button { cursor: pointer; }
 /* El menú es pantalla completa: position fixed inset 0
    GSAP maneja autoAlpha (opacity + visibility) */
 .nav-menu-mobile {
-  display: none; /* solo en mobile */
+  display: none; /* oculto en desktop */
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
