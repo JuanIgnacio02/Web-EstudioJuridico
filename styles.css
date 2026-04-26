@@ -445,43 +445,45 @@ button { cursor: pointer; }
     position: fixed;
     top: 0;
     right: 0;
-    height: 100dvh;
-    width: min(340px, 80vw);
+    bottom: 0;               /* más confiable que height: 100dvh en iOS Safari */
+    width: min(320px, 82vw);
     background: var(--dark);
-    border-left: 1px solid rgba(255,255,255,0.06);
+    border-left: 1px solid rgba(255,255,255,0.08);
     z-index: 200;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
-    padding: 100px 44px 52px;
+    padding: 72px 40px 48px;
     gap: 0;
     visibility: hidden;
-    box-shadow: -24px 0 80px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    box-shadow: -32px 0 80px rgba(0,0,0,0.6);
   }
 
   /* Links principales — Cormorant Garamond italic grande */
   .navbar__links > a:not(.nav-cta) {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(2rem, 8vw, 2.6rem);
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
     font-weight: 300;
     font-style: italic;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.5);
     letter-spacing: -0.01em;
     line-height: 1;
-    padding: 13px 0;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     width: 100%;
     transition: color 0.22s var(--ease);
+    display: block;
   }
-  .navbar__links > a:not(.nav-cta):last-of-type { border-bottom: none; }
+  .navbar__links > a:not(.nav-cta):first-child { border-top: 1px solid rgba(255,255,255,0.06); }
   .navbar__links > a:not(.nav-cta):hover { color: var(--white); }
 
   /* CTA WhatsApp al fondo del drawer */
   .navbar__links .nav-cta {
-    margin-top: auto;
+    margin-top: 40px;
     font-size: 0.7rem !important;
-    padding: 13px 28px !important;
+    padding: 14px 28px !important;
     letter-spacing: 0.1em;
     width: 100%;
     justify-content: center;
