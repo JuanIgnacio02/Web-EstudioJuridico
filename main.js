@@ -11,77 +11,26 @@ if (navbar) {
   onScroll();
 }
 
-/* ---- OCULTAR NAV DESKTOP EN MOBILE (forzado via JS) ---- */
-const navLinksDesktop = document.getElementById('navLinks');
-function syncNavVisibility() {
-  if (!navLinksDesktop) return;
-  navLinksDesktop.style.display = window.innerWidth <= 768 ? 'none' : '';
-}
-syncNavVisibility();
-window.addEventListener('resize', syncNavVisibility, { passive: true });
+/* ---- BURGER ---- */
+const burger   = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
 
-/* ---- MOBILE MENU (GSAP) ---- */
-const burger      = document.getElementById('burger');
-const mobileMenu  = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
 
-if (burger && mobileMenu) {
-  let isOpen = false;
-
-  const links = mobileMenu.querySelectorAll('.nav-menu-mobile__links a');
-  const cta   = mobileMenu.querySelector('.nav-menu-mobile__cta');
-
-  /* Establecer estado inicial oculto */
-  gsap.set(mobileMenu, { autoAlpha: 0, pointerEvents: 'none' });
-  gsap.set([links, cta], { y: 24, autoAlpha: 0 });
-
-  /* Timeline de apertura */
-  const tl = gsap.timeline({ paused: true });
-
-  tl
-    .to(mobileMenu, {
-      autoAlpha: 1,
-      pointerEvents: 'auto',
-      duration: 0.3,
-      ease: 'power2.out'
-    })
-    .to(links, {
-      y: 0,
-      autoAlpha: 1,
-      stagger: 0.07,
-      duration: 0.4,
-      ease: 'power3.out'
-    }, 0.1)
-    .to(cta, {
-      y: 0,
-      autoAlpha: 1,
-      duration: 0.35,
-      ease: 'power3.out'
-    }, 0.38);
-
-  const openMenu = () => {
-    isOpen = true;
-    burger.classList.add('open');
-    burger.setAttribute('aria-expanded', 'true');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    tl.play();
-  };
-
-  const closeMenu = () => {
-    isOpen = false;
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    tl.reverse();
-  };
-
-  burger.addEventListener('click', () => isOpen ? closeMenu() : openMenu());
-  mobileClose?.addEventListener('click', closeMenu);
-  links.forEach(a => a.addEventListener('click', closeMenu));
-  cta?.addEventListener('click', closeMenu);
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen) closeMenu(); });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
 }
 
 /* ---- SMOOTH SCROLL (index links only) ---- */
