@@ -11,27 +11,8 @@ if (navbar) {
   onScroll();
 }
 
-/* ---- BURGER ---- */
-const burger   = document.getElementById('burger');
+/* ---- NAV LINKS ---- */
 const navLinks = document.getElementById('navLinks');
-
-if (burger && navLinks) {
-  burger.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      burger.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-}
 
 /* ---- SMOOTH SCROLL (index links only) ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
