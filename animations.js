@@ -348,15 +348,7 @@ mm.add(
       once: true
     });
 
-    /* Parallax sutil en sub-cards */
-    gsap.utils.toArray(".sub-card").forEach(card => {
-      gsap.to(card, {
-        y: -12, ease: "none",
-        scrollTrigger: {
-          trigger: card, start: "top bottom", end: "bottom top", scrub: 1
-        }
-      });
-    });
+    /* Parallax en sub-cards eliminado — conflicto con animación de entrada */
 
     /* ==========================================================
        8. PROCESO — pasos
@@ -456,7 +448,7 @@ mm.add(
        13. REMAINING .reveal — todo lo que queda sin animar
        ========================================================== */
     ScrollTrigger.batch(
-      ".reveal:not(.lp-title):not(.lp-num):not(.lp-card):not(.lp-priority-tag)", {
+      ".reveal:not(.lp-title):not(.lp-num):not(.lp-card):not(.lp-priority-tag):not(.sub-card)", {
       onEnter: batch => gsap.to(batch, {
         autoAlpha: 1, y: 0, x: 0,
         duration: 0.65, ease: "power2.out", stagger: 0.08
