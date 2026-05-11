@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Abogada Gimena Pérez — Divorcio express, acuerdos de alimentos, cuidado personal y división de bienes. Atención discreta y personalizada." />
   <meta name="theme-color" content="#090909" />
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="service.css" />
   <!-- SEO: canonical + OG + Twitter -->
+  <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://web-estudiojuridico.pages.dev/divorcios.html" />
   <meta property="og:url"         content="https://web-estudiojuridico.pages.dev/divorcios.html" />
   <meta property="og:title"        content="Divorcios · Abogada Gimena Pérez — San Rafael" />
@@ -51,7 +53,7 @@
   <header class="navbar" id="navbar">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo">
-        <img src="logo.png.jpg" alt="Estudio Jurídico Pérez" class="navbar__logo-img" />
+        <img src="logo.png.jpg" alt="Estudio Jurídico Pérez" class="navbar__logo-img" width="36" height="36" />
         <div class="navbar__logo-text">
           <span class="navbar__logo-name">Gimena Pérez</span>
           <span class="navbar__logo-role">Abogada</span>
@@ -226,7 +228,7 @@
     <div class="container footer__inner">
       <div>
         <div class="footer__brand">
-          <img src="logo.png.jpg" alt="Logo" class="footer__logo-img" />
+          <img src="logo.png.jpg" alt="Logo" class="footer__logo-img" loading="lazy" width="48" height="48" />
           <div>
             <p class="footer__brand-name">Gimena Pérez</p>
             <p class="footer__brand-role">Abogada · Estudio Jurídico</p>
@@ -251,6 +253,30 @@
   <a href="https://wa.me/542604689061?text=Hola%20Gimena%2C%20quiero%20divorciarme%20y%20necesito%20orientaci%C3%B3n." class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.525 5.848L0 24l6.335-1.506A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.015-1.373l-.36-.213-3.728.887.936-3.618-.236-.374A9.818 9.818 0 1 1 12 21.818z"/></svg>
   </a>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-nav" aria-label="Navegación principal">
+    <a href="index.html" class="mobile-nav__item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12L12 3l9 9"/><path d="M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg>
+      <span>Inicio</span>
+    </a>
+    <a href="accidentes.html" class="mobile-nav__item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>Accidentes</span>
+    </a>
+    <a href="divorcios.html" class="mobile-nav__item active">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      <span>Divorcios</span>
+    </a>
+    <a href="sucesiones.html" class="mobile-nav__item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      <span>Sucesiones</span>
+    </a>
+    <a href="contratos.html" class="mobile-nav__item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+      <span>Contratos</span>
+    </a>
+  </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>

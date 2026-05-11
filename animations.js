@@ -20,10 +20,11 @@ const mm = gsap.matchMedia();
 mm.add(
   {
     hasMotion: "(prefers-reduced-motion: no-preference)",
-    noMotion:  "(prefers-reduced-motion: reduce)"
+    noMotion:  "(prefers-reduced-motion: reduce)",
+    isMobile:  "(max-width: 768px)"
   },
   (ctx) => {
-    const { noMotion } = ctx.conditions;
+    const { noMotion, isMobile } = ctx.conditions;
 
     /* ---- Sin movimiento: mostrar todo al instante y salir ---- */
     if (noMotion) {
@@ -113,10 +114,13 @@ mm.add(
           }
         });
 
-      /* Contenido completo: blur + scale + fade — un solo tween limpio */
+      /* Contenido completo: blur + scale + fade — blur desactivado en mobile (caro en GPU) */
       gsap.fromTo(".hero__center",
-        { filter: "blur(0px)", scale: 1,    y: 0,   autoAlpha: 1 },
-        { filter: "blur(10px)", scale: 0.93, y: -72, autoAlpha: 0, ease: "none",
+        { filter: "blur(0px)", scale: 1,                        y: 0,              autoAlpha: 1 },
+        { filter: isMobile ? "blur(0px)" : "blur(10px)",
+          scale:  isMobile ? 1           : 0.93,
+          y:      isMobile ? -40         : -72,
+          autoAlpha: 0, ease: "none",
           scrollTrigger: {
             trigger: ".hero", start: "top top", end: "75% top", scrub: 1
           }
@@ -177,8 +181,11 @@ mm.add(
       const pageHero = document.querySelector(".page-hero");
       if (pageHero) {
         gsap.fromTo(".page-hero__content",
-          { filter: "blur(0px)", scale: 1,    y: 0,   autoAlpha: 1 },
-          { filter: "blur(8px)",  scale: 0.94, y: -60, autoAlpha: 0, ease: "none",
+          { filter: "blur(0px)", scale: 1,                       y: 0,              autoAlpha: 1 },
+          { filter: isMobile ? "blur(0px)" : "blur(8px)",
+            scale:  isMobile ? 1           : 0.94,
+            y:      isMobile ? -30         : -60,
+            autoAlpha: 0, ease: "none",
             scrollTrigger: {
               trigger: pageHero, start: "top top", end: "75% top", scrub: 1
             }
@@ -256,7 +263,7 @@ mm.add(
         });
     });
 
-    /* Visual cards: entrada 3D (rotateX) + parallax scrub */
+    /* Visual cards: entrada 3D (rotateX) + parallax solo en desktop */
     gsap.utils.toArray(".lp-card").forEach((card, i) => {
       /* Entrada con perspectiva 3D */
       gsap.fromTo(card,
@@ -268,13 +275,15 @@ mm.add(
           }
         });
 
-      /* Parallax sutil mientras el usuario scrollea — profundidad */
-      gsap.to(card, {
-        y: -20, ease: "none",
-        scrollTrigger: {
-          trigger: card, start: "top bottom", end: "bottom top", scrub: 1.5
-        }
-      });
+      /* Parallax sutil — desactivado en mobile para evitar jank */
+      if (!isMobile) {
+        gsap.to(card, {
+          y: -20, ease: "none",
+          scrollTrigger: {
+            trigger: card, start: "top bottom", end: "bottom top", scrub: 1.5
+          }
+        });
+      }
     });
 
     /* ==========================================================

@@ -208,25 +208,47 @@ button { cursor: pointer; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { opacity: 0.85 !important; }
 
-/* Burger */
-.navbar__burger {
+/* =============================================
+   MOBILE BOTTOM NAV
+   ============================================= */
+
+.mobile-nav {
   display: none;
+}
+
+.mobile-nav__item {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  padding: 4px;
-  z-index: 201;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 2px;
+  color: var(--gray-2);
+  font-family: var(--sans);
+  font-size: 0.54rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 48px;
 }
-.navbar__burger span {
-  display: block;
-  width: 22px; height: 1.5px;
-  background: var(--white);
-  transition: transform 0.3s var(--ease), opacity 0.3s;
+
+.mobile-nav__item svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  transition: stroke 0.2s;
 }
-.navbar__burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.navbar__burger.open span:nth-child(2) { opacity: 0; }
-.navbar__burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-nav__item.active { color: var(--white); }
+.mobile-nav__item:hover  { color: var(--white); }
 
 /* =============================================
    BOTONES GLOBALES
@@ -434,13 +456,35 @@ button { cursor: pointer; }
    ============================================= */
 
 @media (max-width: 768px) {
-  /* Sin menú lateral — nav y burger ocultos en mobile */
   .navbar__links { display: none !important; }
-  .navbar__burger { display: none !important; }
 
   .footer__inner { grid-template-columns: 1fr; }
   .footer__links { align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; }
   .footer__instagram { border: none; padding: 0; margin: 0; }
+
+  /* Bottom nav visible en mobile */
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: rgba(9,9,9,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 4px 0;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+  }
+
+  /* WA float sube por encima del bottom nav */
+  .wa-float {
+    bottom: calc(68px + max(8px, env(safe-area-inset-bottom)));
+  }
+
+  /* Espacio para que el contenido no quede tapado */
+  body {
+    padding-bottom: calc(60px + max(0px, env(safe-area-inset-bottom)));
+  }
 }
 
 @media (max-width: 480px) {
