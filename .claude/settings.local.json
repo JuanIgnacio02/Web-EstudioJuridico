@@ -17,7 +17,8 @@
       "mcp__Claude_Preview__preview_start",
       "WebSearch",
       "Skill(mobile-design)",
-      "Skill(mobile-design:*)"
+      "Skill(mobile-design:*)",
+      "Bash(git rm *)"
     ]
   }
 }
