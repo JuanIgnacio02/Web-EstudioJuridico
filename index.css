@@ -413,6 +413,10 @@
   .lp-visual { justify-content: flex-start; }
   .lp-card { max-width: 100%; }
 
+  /* Título siempre primero, card siempre abajo — sin importar el orden del HTML */
+  .lp-grid .lp-content { order: 1; }
+  .lp-grid .lp-visual  { order: 2; }
+
   .lp-diferencial__inner {
     grid-template-columns: 1fr;
     gap: 36px;
