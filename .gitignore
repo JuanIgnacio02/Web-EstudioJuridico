@@ -1,1 +1,24 @@
-skill
+# Claude Code internals
+.claude/
+
+# Skills directory
+skill/
+skills/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node
+node_modules/
