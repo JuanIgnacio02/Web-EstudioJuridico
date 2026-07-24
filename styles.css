@@ -454,6 +454,10 @@ button { cursor: pointer; }
 @media (max-width: 768px) {
   .navbar__links { display: none !important; }
 
+  /* Wordmark más delicado en mobile */
+  .navbar__logo-name { font-size: 1.1rem; letter-spacing: 0.15em; }
+  .navbar__logo-role { font-size: 0.55rem; letter-spacing: 0.38em; text-indent: 0.38em; margin-top: 3px; }
+
   .footer__inner { grid-template-columns: 1fr; }
   .footer__links { align-items: flex-start; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; }
   .footer__instagram { border: none; padding: 0; margin: 0; }
