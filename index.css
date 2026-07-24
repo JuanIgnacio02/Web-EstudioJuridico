@@ -41,50 +41,63 @@
   max-width: 640px;
   margin: 0 auto;
 }
-.hero__logo {
-  width: 108px; height: 108px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 32px;
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,0.07),
-    0 0 0 8px rgba(255,255,255,0.02),
-    0 20px 56px rgba(0,0,0,0.6);
-}
 .hero__eyebrow {
-  font-size: 0.68rem;
+  font-family: var(--sans);
+  font-size: 0.66rem;
   font-weight: 400;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--gray-2);
-  margin-bottom: 18px;
+  margin: 0 0 30px;
+  padding-left: 0.34em;
 }
-.hero__title {
+.hero__name {
   font-family: 'Bodoni Moda', Georgia, serif;
-  font-size: clamp(3.8rem, 9vw, 7rem);
-  font-weight: 300;
-  line-height: 0.97;
+  font-size: clamp(3rem, 9.5vw, 7rem);
+  font-weight: 400;
+  line-height: 1;
   color: var(--white);
-  letter-spacing: -0.02em;
-  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 26px;
+  /* compensa el letter-spacing para mantener el centrado óptico */
+  padding-left: 0.12em;
 }
-.hero__title em { font-style: italic; font-weight: 300; color: var(--gray-4); }
-.hero__tagline {
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-  font-weight: 300;
-  color: var(--gray-2);
-  line-height: 1.7;
-  margin-bottom: 14px;
+.hero__name em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gray-4);
+}
+.hero__role {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: clamp(0.78rem, 1.5vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gray-3);
+  margin: 0 0 28px;
+  padding-left: 0.42em;
+}
+.hero__role-line {
+  display: block;
+  width: clamp(28px, 6vw, 56px);
+  height: 1px;
+  background: rgba(255,255,255,0.22);
 }
 .hero__areas {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 400;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--gray-1);
-  margin-bottom: 40px;
+  margin: 0 0 46px;
+  padding-left: 0.2em;
 }
-.hero__btn { padding: 16px 36px; font-size: 0.9rem; }
+.hero__btn { padding: 16px 40px; font-size: 0.86rem; }
 .hero__scroll-hint {
   position: absolute;
   bottom: 28px;
@@ -435,9 +448,11 @@
   .hero__btn { width: 100%; justify-content: center; }
   .dif-btns { flex-direction: column; }
   .dif-btn { text-align: center; }
+  .hero__eyebrow { letter-spacing: 0.24em; padding-left: 0.24em; }
+  .hero__areas { font-size: 0.58rem; letter-spacing: 0.08em; padding-left: 0.08em; }
 }
 
 @media (max-width: 400px) {
-  .hero__logo { width: 86px; height: 86px; }
-  .hero__title { font-size: 3.2rem; }
+  .hero__name { letter-spacing: 0.08em; padding-left: 0.08em; }
+  .hero__role { letter-spacing: 0.34em; padding-left: 0.34em; }
 }

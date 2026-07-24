@@ -14,6 +14,27 @@ if (navbar) {
 /* ---- NAV LINKS ---- */
 const navLinks = document.getElementById('navLinks');
 
+/* ---- MENÚ HAMBURGUESA (fullscreen) ---- */
+const burger = document.getElementById('burger');
+function closeMenu() {
+  navLinks?.classList.remove('open');
+  burger?.classList.remove('open');
+  burger?.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
+  });
+}
+
 /* ---- SMOOTH SCROLL (index links only) ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
